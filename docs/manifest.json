@@ -1,0 +1,70 @@
+{
+  "format": "arithmetic-experimental-publication/1",
+  "version": "arithmetic-trial/1",
+  "publication": "experimental_trial",
+  "scope": "bounded integer arithmetic only",
+  "numeric_verification": {
+    "status": "pass",
+    "method": "exhaustive BigInt operand oracle; no DB imports",
+    "counts": {
+      "add": 231,
+      "sub": 231,
+      "mul": 100,
+      "div": 90
+    },
+    "row_sha256": {
+      "add": "9f84d81e75a94c6859dbaf49ee06fe088eee50ac33c8512fa8f08b3273cdf929",
+      "sub": "ebdc0cc2a7d39ffea8d82e13d92f4ebd30b7a1bfb0e106080c77925fe3813dd4",
+      "mul": "ba46c742a158b76372bb64e836daece0ad0436403f559e0aa813e7db7fdff93e",
+      "div": "b73c048546bcb0f02f92ddbee428280de96817f2a329b4f08b531244599f3ff9"
+    },
+    "total": 652,
+    "teacher_review": "not_performed"
+  },
+  "browser_verification": {
+    "status": "pass",
+    "checks": 55,
+    "report_sha256": "a875f08cc298fa399c8a4f117fe8fb709741ec90bd85be7b9d55dd263d7848ea",
+    "report": "https://github.com/yggdrasilw-spec/shogakusansu-trial/blob/main/verification.json"
+  },
+  "teacher_review": "not_performed",
+  "formal_db_release": "HOLD",
+  "private_sources_included": false,
+  "external_dependencies": [],
+  "blanket_license": null,
+  "feedback": "yggdrasil.w@gmail.com",
+  "files": {
+    "NOTICE.txt": {
+      "bytes": 1534,
+      "sha256": "01ff9f15a253385887caac8296d34ac6430de881fbfcf4751f634351607d878b",
+      "origin": "new AI-assisted trial implementation, 2026-10-04",
+      "third_party_assets": false
+    },
+    "client.mjs": {
+      "bytes": 4502,
+      "sha256": "eb23efd034a0ac187280dacf66badee39d1bfe631a1cea053a410e171d94f746",
+      "origin": "new AI-assisted trial implementation, 2026-10-04",
+      "third_party_assets": false
+    },
+    "index.html": {
+      "bytes": 3707,
+      "sha256": "bc80af38fcd0c91304f759e1188f04ad48e71b7978f006f9c34eabb1ce261c7c",
+      "origin": "new AI-assisted trial implementation, 2026-10-04",
+      "third_party_assets": false
+    },
+    "math.mjs": {
+      "bytes": 3300,
+      "sha256": "90189259523998efa52da6000b5b73038a9ef490688736e02ea00377a09188e2",
+      "origin": "new AI-assisted trial implementation, 2026-10-04",
+      "third_party_assets": false
+    },
+    "style.css": {
+      "bytes": 1980,
+      "sha256": "ac0c719286c00d2b8f9e4751e3b973a68cdc8169bcc876b4ae3842c841e21aba",
+      "origin": "new AI-assisted trial implementation, 2026-10-04",
+      "third_party_assets": false
+    }
+  },
+  "artifact_sha256": "fadb00def9be3ed574681647473d9c3c636f3d1d43e897f8c8a99848bd17ec11",
+  "site": "https://yggdrasilw-spec.github.io/shogakusansu-trial/"
+}
