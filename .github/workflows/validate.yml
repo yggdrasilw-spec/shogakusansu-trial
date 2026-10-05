@@ -1,4 +1,4 @@
-name: Validate arithmetic trial
+name: Validate curriculum trial
 on: [push, pull_request, workflow_dispatch]
 permissions:
   contents: read
@@ -10,4 +10,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
       - run: node scripts/verify.mjs

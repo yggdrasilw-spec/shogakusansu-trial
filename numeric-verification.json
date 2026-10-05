@@ -1,0 +1,1134 @@
+{
+  "status": "pass",
+  "topics": 281,
+  "rows": 82154,
+  "artifact_sha256": "b6a94f9ade4f3e83b5eb0a5a49f17545c86f6a31b7708382524d7cb410971dab",
+  "method": "standalone integer/Fraction oracle; full set comparison; file hashes; authored explanations present",
+  "teacher_review": "not_performed",
+  "numeric_topics": {
+    "a-basic": {
+      "rows": 64,
+      "numeric_sha256": "eba09886bae94ac032a4ffc8e064721441dd5ec667d8d9c0fdc171c739c0aed5"
+    },
+    "a-complement": {
+      "rows": 9,
+      "numeric_sha256": "2fab6e63c460bacce8f0b1235bb46728c62ff821ba52f562e0e56f0a68027720"
+    },
+    "as-add-transfer": {
+      "rows": 36,
+      "numeric_sha256": "a5159ae4c5f8ace3fffdd78fb522aa6ae19c9a174570bf5c94bdfc5fe8453244"
+    },
+    "as-sub-basic": {
+      "rows": 55,
+      "numeric_sha256": "e5a2dd6463bd2a632f5ca99776e8746ceef64ecb303e38ef4588b1df2908b741"
+    },
+    "as-sub-ten": {
+      "rows": 11,
+      "numeric_sha256": "898566798b7faeb7583ea8c150b39f9d2577f5f56704b42fb636941506a88517"
+    },
+    "as-sub-transfer": {
+      "rows": 36,
+      "numeric_sha256": "f7a88314edd20aadf468a75f034cd83e8f533280204f91e630851d3d8003c8cb"
+    },
+    "b-basic": {
+      "rows": 72,
+      "numeric_sha256": "7a0e9fc979f10941107dc2963b948cf50deb42623539847de6dc397f037852eb"
+    },
+    "b-ceiling": {
+      "rows": 324,
+      "numeric_sha256": "f6262a954d97deb4187d85b5fad12085c6e0961db1c44467022a17e25bc2aa3c"
+    },
+    "b-group": {
+      "rows": 72,
+      "numeric_sha256": "e90a130a534ac65eab58b3639af17472ba5ebe38c4b49192afecaaaa90da7d4f"
+    },
+    "b-inverse": {
+      "rows": 72,
+      "numeric_sha256": "7a0e9fc979f10941107dc2963b948cf50deb42623539847de6dc397f037852eb"
+    },
+    "b-one": {
+      "rows": 81,
+      "numeric_sha256": "3c0396d786e9e7f25ae2f15ae266b88d37166c0c39d8d4afbcd9e266b8640d1b"
+    },
+    "b-quotient": {
+      "rows": 324,
+      "numeric_sha256": "1ff874604b85fed73d224a87271d0796c0c2960ade48af947a48cbfb10e85ec8"
+    },
+    "b-remainder": {
+      "rows": 324,
+      "numeric_sha256": "04c6e1ea972a6c3bb64775d911a86f66965dd8ac35bcd5ebb4c3b453b0857b54"
+    },
+    "b-share": {
+      "rows": 72,
+      "numeric_sha256": "e90a130a534ac65eab58b3639af17472ba5ebe38c4b49192afecaaaa90da7d4f"
+    },
+    "b-zero": {
+      "rows": 9,
+      "numeric_sha256": "45cbaec41675b83bdcf54a40e13ade6651b2982d7b6c0568edbdf2da7f235986"
+    },
+    "c-add": {
+      "rows": 2338,
+      "numeric_sha256": "8134dd7134bd0bc8a80981d1aea13f4159d6dcceea548e3aa8dc3f45b84f2efe"
+    },
+    "c-common": {
+      "rows": 198,
+      "numeric_sha256": "6d550a756a09c7dbec0fb6a88a5c12f60e8089394420cc824765e611feb91fed"
+    },
+    "c-equivalent": {
+      "rows": 198,
+      "numeric_sha256": "6d550a756a09c7dbec0fb6a88a5c12f60e8089394420cc824765e611feb91fed"
+    },
+    "c-mixed-add": {
+      "rows": 510,
+      "numeric_sha256": "6bde807511a864e8e357c06bb317cd50e57117f7293632004630da9fff4dee2e"
+    },
+    "c-mixed-sub": {
+      "rows": 240,
+      "numeric_sha256": "4b614c58536c37aba2c14c557eb4cc65eb8e838512d87d8262304af316d779ed"
+    },
+    "c-order": {
+      "rows": 2700,
+      "numeric_sha256": "0c2777e0a36010574e4dd69fa79f9140748e7dfa3f3ed6164879b940105634df"
+    },
+    "c-reduce": {
+      "rows": 198,
+      "numeric_sha256": "6f8746fb6e85743aa3043ad00475ebda5bf8ff3484c13b7d9583fa591c2bfe2c"
+    },
+    "c-same": {
+      "rows": 205,
+      "numeric_sha256": "0c62c13b31637d2dddf3cb3455e35391e76473a05085185cd47da218d9d3fb55"
+    },
+    "c-sub": {
+      "rows": 1208,
+      "numeric_sha256": "6609caed9e5ecca9028a195d6d1892e3aa754f61056d468ce4025d2a7c1e2a12"
+    },
+    "c-unit": {
+      "rows": 66,
+      "numeric_sha256": "3d1ab51f327cd5773d6c0d197e9e79d7586976e0d932626b55ef141c1461d911"
+    },
+    "s1-compare": {
+      "rows": 441,
+      "numeric_sha256": "c6f5939fd937365975159703cb228bf3b4b0635066235d92d1a3a51e965d0ebd"
+    },
+    "s1-compare-visual": {
+      "rows": 81,
+      "numeric_sha256": "d3686ab630a970cdd884e5093e399b39dbdf3aa8bb1a9213ec61b4b75ef7e21d"
+    },
+    "s1-count-visual": {
+      "rows": 33,
+      "numeric_sha256": "47956f232dcf2bd255600b65126bace78aeb90ef9849b3c9c6807c9d5e5c4794"
+    },
+    "s1-group-visual": {
+      "rows": 36,
+      "numeric_sha256": "093794c7347e7c55e55dc19e9287cee2a0144a2ffbeddb4d02820890f94211de"
+    },
+    "s1-match-visual": {
+      "rows": 81,
+      "numeric_sha256": "cfeda6160cd612ef01d47f2821af30decc9ef594e5f8c86d0134684416df3105"
+    },
+    "s1-order": {
+      "rows": 98,
+      "numeric_sha256": "44c345b52907e5164a95268299bd2118a134e6c2348f15a8a0a5443fa175b039"
+    },
+    "s1-tens": {
+      "rows": 90,
+      "numeric_sha256": "82b7611151b687fa6ebbce15c9f7f6a9e4c7a149ccc7c38b70a2fc85ecdfa945"
+    },
+    "s1-three-add": {
+      "rows": 343,
+      "numeric_sha256": "f6dc7d4cc421e831b0e6de7b4f1ec52ade83d7cf742864df2206ca5f7c7094e3"
+    },
+    "s2-add-column": {
+      "rows": 2700,
+      "numeric_sha256": "7068fd4cd479fde46b356c027f6ac4322bc133b65421bf6fcb4aa2670bacba96"
+    },
+    "s2-capacity-add": {
+      "rows": 1600,
+      "numeric_sha256": "31d0decf9eea588f880d800db83e6a7e728dd78e0d5286a70930417eef17bb78"
+    },
+    "s2-capacity-dl": {
+      "rows": 100,
+      "numeric_sha256": "f00d9bb70fe4189f1f1f9d26777923d41ce6795cff112b3df8fd0ef8f119255b"
+    },
+    "s2-capacity-ml": {
+      "rows": 100,
+      "numeric_sha256": "22861aa2302f8f42946dada56413e980359e908a93c855975ead4a524b409992"
+    },
+    "s2-capacity-sub": {
+      "rows": 820,
+      "numeric_sha256": "b588422f7de17522c28706dc7f3c00b62a2c8003e31fbba89ff165507feb08ec"
+    },
+    "s2-four-digit": {
+      "rows": 90,
+      "numeric_sha256": "6a54dbd684dbca7af136ce54727afc2fdb5cc5ebbab6aeaa562ecde83ac42726"
+    },
+    "s2-kuku": {
+      "rows": 81,
+      "numeric_sha256": "00f098ff3b2708d5b2ce4312c652f6837f7fd84f31d26873799b2b3d2ea14636"
+    },
+    "s2-length": {
+      "rows": 300,
+      "numeric_sha256": "f8953854875d1465ecc0206d948f7ec8bcf6812d2fe0912479c2f2b7b79160b7"
+    },
+    "s2-place": {
+      "rows": 900,
+      "numeric_sha256": "ef100c0bdb5e75a77d4bf952915a1e498d2f8775ade92e5f3eeecc03769c1359"
+    },
+    "s2-sub-column": {
+      "rows": 2265,
+      "numeric_sha256": "204e041130fa61b9273546ba4b74e9ce5f89e19bc1b9eb322f6699308a5cf16c"
+    },
+    "s2-time": {
+      "rows": 300,
+      "numeric_sha256": "7ba78332c8673133b37833ef5dc7adb7eba453f7ab6102d0122408c59282070d"
+    },
+    "s3-dec-add": {
+      "rows": 1600,
+      "numeric_sha256": "6510908331bb556a991a143b327e803bf0479e6edcf9adbea7753bed3e14e620"
+    },
+    "s3-dec-sub": {
+      "rows": 1274,
+      "numeric_sha256": "acbd60facc7d19bc7d644746be6b1f6e0498553d4d84b6703d9df4f0027c402a"
+    },
+    "s3-dec-unit": {
+      "rows": 99,
+      "numeric_sha256": "ec11b51d52372eb340526023029e525e9ed305e3ce1cdf7dc44ad0bb974f1a68"
+    },
+    "s3-elapsed": {
+      "rows": 3600,
+      "numeric_sha256": "4fd96fdb2a115ba2be728eeb69aaa48b7d8aab7b24fa1ceacdb3e6d3e3ca0948"
+    },
+    "s3-km": {
+      "rows": 100,
+      "numeric_sha256": "22861aa2302f8f42946dada56413e980359e908a93c855975ead4a524b409992"
+    },
+    "s3-large": {
+      "rows": 90,
+      "numeric_sha256": "0e5f1044a53a9f54f1ddcd0c968ba47c0e4f23175c476f9a216f23df94f51b06"
+    },
+    "s3-mul-carry": {
+      "rows": 720,
+      "numeric_sha256": "43f85ef07b529b83fde89e8bf67e5ecc814b49a770f0efcd61421c949a2d8c1c"
+    },
+    "s3-mul-column": {
+      "rows": 720,
+      "numeric_sha256": "84723c6ccb0a7e54406ea190c559b65ff9d5a037600cac4a720893afcdbefc11"
+    },
+    "s3-mul-ones-product": {
+      "rows": 720,
+      "numeric_sha256": "172a26d175bcebf7844d2d41a2c7307230417a25b11d398bca1ed4c982d3bf86"
+    },
+    "s3-mul-tens-value": {
+      "rows": 720,
+      "numeric_sha256": "69b0f1be4e4b46aa6979ac99bafe6ed7d2fdce34297b8fa0fe7a9b1f073f36e7"
+    },
+    "s3-mul-two": {
+      "rows": 900,
+      "numeric_sha256": "6a2ce738b65824a1d8582f8220f5cf2950429786810d162b21750df3eb2246a5"
+    },
+    "s3-mul-write": {
+      "rows": 720,
+      "numeric_sha256": "fb33c305e7e37543c591a9cdd4b29d87c407f22d9352d1b1415a9bf773968563"
+    },
+    "s3-seconds": {
+      "rows": 600,
+      "numeric_sha256": "60da5078674ebcd4cdaca50a495f89541b8905a6dfd45498986ebf7a1b9c1833"
+    },
+    "s3-tick-step": {
+      "rows": 720,
+      "numeric_sha256": "b991061ac43f302760131916d0cf6957357f009f52ab3642df1f6d8ac632a059"
+    },
+    "s3-tick-value": {
+      "rows": 810,
+      "numeric_sha256": "880c4dfd5b7b3e254d874f153ae677a16532dcff53245abcdf7915a8d2f45339"
+    },
+    "s3-tick-visual": {
+      "rows": 750,
+      "numeric_sha256": "4d99e132979ba2e85ac31b6f5a3db27d63bd807dc3491aa7947ee95db8d4655e"
+    },
+    "s3-times10": {
+      "rows": 99,
+      "numeric_sha256": "e90ffb03701f37ec2e403490278c341b3a279ddac97997af5aec841e549dc04a"
+    },
+    "s3-weight": {
+      "rows": 90,
+      "numeric_sha256": "6a54dbd684dbca7af136ce54727afc2fdb5cc5ebbab6aeaa562ecde83ac42726"
+    },
+    "s4-angle": {
+      "rows": 161,
+      "numeric_sha256": "e08b8ea4fa23853ca37f2e080887ead15b7167fe0db01ad3d9f5e26d499f173a"
+    },
+    "s4-area": {
+      "rows": 400,
+      "numeric_sha256": "40d9970cc3e97e77f9ddc6ee124b29a481d120041adfef9822d6c5fc284168db"
+    },
+    "s4-dec-div": {
+      "rows": 472,
+      "numeric_sha256": "8ffde9653e9013079bb315ee2da09ab1fb79949617684b7f8f36a1753ddaefe3"
+    },
+    "s4-dec-mul": {
+      "rows": 472,
+      "numeric_sha256": "5aea1edfc99f8b05b2feab5bb7243f5191e106ebc1c48ed375e2c62d596e7394"
+    },
+    "s4-div-column": {
+      "rows": 2200,
+      "numeric_sha256": "0f9747a9cc113daf00715d007a05e34a87d8369d98834f0f84d04a10a2033e40"
+    },
+    "s4-div-invariance": {
+      "rows": 720,
+      "numeric_sha256": "3d18511feafb18d4bed21cd6aeccd1b5904b64e9c814d72c638065f6f5053f93"
+    },
+    "s4-order": {
+      "rows": 1620,
+      "numeric_sha256": "abeb6d49b0a08b3639b131806f15b43fbd879aa9b51f8c1bceb477ae7b527c3f"
+    },
+    "s4-round": {
+      "rows": 900,
+      "numeric_sha256": "63a10fc7c0689afa19627fa576a31b952827a9cf3f6ee0210440ef02b4286a26"
+    },
+    "s5-average": {
+      "rows": 2197,
+      "numeric_sha256": "208fb99e7534f1cb0ac84c167bced052fd6b2022339b78b950540fa1ada09b8f"
+    },
+    "s5-base": {
+      "rows": 360,
+      "numeric_sha256": "793ed4fa02b7504e4774a5b287100958a58721b5ba10b7969ac7b028a5df6473"
+    },
+    "s5-dec-div": {
+      "rows": 1421,
+      "numeric_sha256": "c5999340689d8ea5097739ef2ad257c98e5becb17679a90edf28341878c4e3bf"
+    },
+    "s5-dec-mul": {
+      "rows": 1911,
+      "numeric_sha256": "dd760c1ee05e713ef2e7c97bcab7f1be06cc8ffa9a5d8b5280924b4d2bd3c064"
+    },
+    "s5-divisor": {
+      "rows": 480,
+      "numeric_sha256": "4513d1b7b2b8f8742710f4ded1a6a76ae0622ef4f69416e0698993119a987db8"
+    },
+    "s5-gcd": {
+      "rows": 1521,
+      "numeric_sha256": "b709e4554bdff6edf607e5a8ce7c33764f7d386a3d9802c1b1b425aa38feca5a"
+    },
+    "s5-lcm": {
+      "rows": 225,
+      "numeric_sha256": "ee34d87f232c1a7dbc55d5635697c7c8dfa319029e143446a83bee96744f966d"
+    },
+    "s5-multiple": {
+      "rows": 99,
+      "numeric_sha256": "dbaf4b9f90b32af83183bab253c6da8e56165c26cf19170876c42c5946f96738"
+    },
+    "s5-parity": {
+      "rows": 100,
+      "numeric_sha256": "0384763105c5220f82650bb36fb65e4afc683aeee004e845067599e755aa993c"
+    },
+    "s5-part": {
+      "rows": 369,
+      "numeric_sha256": "95411b756d3951214c99d03295dbcc49e13a8bde11e0275c4c58e133034b6f69"
+    },
+    "s5-percent": {
+      "rows": 99,
+      "numeric_sha256": "eadd5ed70d4e6cb69e0b017f36203a80893a41572d0ba44f27443b98fe380db4"
+    },
+    "s5-scale-tenth": {
+      "rows": 99,
+      "numeric_sha256": "eadd5ed70d4e6cb69e0b017f36203a80893a41572d0ba44f27443b98fe380db4"
+    },
+    "s5-speed": {
+      "rows": 720,
+      "numeric_sha256": "3e175e133e5561fceaea0cef97e911bf1445577cc430ab90662276a223aa21b4"
+    },
+    "s5-tri-angle": {
+      "rows": 3721,
+      "numeric_sha256": "78f5cf1123e093382fd6ffee471c4dcb011d8a7ac428e1c43eb8c14c9e34ada3"
+    },
+    "s5-triangle": {
+      "rows": 400,
+      "numeric_sha256": "ac22d6d29983789a534e7783e1a45d652cc2a5506000cbd2eb66322be2a9ef83"
+    },
+    "s5-unit": {
+      "rows": 990,
+      "numeric_sha256": "bf1a3562b604bdc74c5f4de8d501ea90014cff8ff56d37e0bf0c65ca8b7daf52"
+    },
+    "s5-volume": {
+      "rows": 729,
+      "numeric_sha256": "9d961cdf7ecde6b42c608a086ad868ad301013d2438948ff1e268f423be1811a"
+    },
+    "s6-circle": {
+      "rows": 20,
+      "numeric_sha256": "e2bbc731b77dc3d235409465504683a3f5bf4407f3c7c3f54a7c707d113f0ebf"
+    },
+    "s6-frac-div": {
+      "rows": 5184,
+      "numeric_sha256": "62365782ffb5806d86fc83e3dea9fc5928c41a534c7d0cf7530fcf77f8be85e6"
+    },
+    "s6-frac-mul": {
+      "rows": 5184,
+      "numeric_sha256": "c663d3f76f7f185312f634f08d0e449f128d6e5bc3760ff8aeb4c23693189410"
+    },
+    "s6-inverse": {
+      "rows": 968,
+      "numeric_sha256": "1d150907ed35a048e625e71789b1311990534c6f58af47919f7304ccbd059e5e"
+    },
+    "s6-letter": {
+      "rows": 5670,
+      "numeric_sha256": "50be7de41945dc13d35803b6b9ad56b0a3e9a599bcda4df1181e49cb52ef2afa"
+    },
+    "s6-prism": {
+      "rows": 800,
+      "numeric_sha256": "cddf34d86c54e2b8f68d8c4dac73887c3919c59d6fe5b8cfd48d6f8ba3963152"
+    },
+    "s6-proportion": {
+      "rows": 240,
+      "numeric_sha256": "3f3992009c1b2f4fbc44af3f88f1a3a8a7d81c5ed841ceda1b7a9914ed057473"
+    },
+    "s6-ratio": {
+      "rows": 648,
+      "numeric_sha256": "ea68d02eaed6d162014a1d282988bcf652df9bb69289e10b43652211928a9988"
+    },
+    "s6-scale": {
+      "rows": 180,
+      "numeric_sha256": "bfddaafec5d051a7a391cbdaaf395780aa015f89fe10251d00dc33d5ebdb073e"
+    },
+    "tb-d1-picture": {
+      "rows": 40,
+      "numeric_sha256": "d1a71a6256e5fb5192f026ca18909f2779ff7ab71b68abc6f0a7d705e6a25772"
+    },
+    "tb-d2-table-graph": {
+      "rows": 40,
+      "numeric_sha256": "d1a71a6256e5fb5192f026ca18909f2779ff7ab71b68abc6f0a7d705e6a25772"
+    },
+    "tb-d3-bar": {
+      "rows": 30,
+      "numeric_sha256": "3bf774f1eec82842c59b7d8105acb41520c13000e3e574e3060c599cffea5e93"
+    },
+    "tb-d3-bar-create": {
+      "rows": 40,
+      "numeric_sha256": "d27f978eba92dc4da18d672f529dbc7b37a75a3efcad91d35d6402eda3a1dcdf"
+    },
+    "tb-d3-bar-read": {
+      "rows": 40,
+      "numeric_sha256": "94a384d31b6335e078e60a644fe9a551f646cd0460ffac2c206ff75e2b6eea29"
+    },
+    "tb-d3-bar-scale": {
+      "rows": 40,
+      "numeric_sha256": "5e26c88d4668c87da95600fa3bce41370429ee8399d6a529757bbceaef69f630"
+    },
+    "tb-d3-classify-table": {
+      "rows": 40,
+      "numeric_sha256": "d1a71a6256e5fb5192f026ca18909f2779ff7ab71b68abc6f0a7d705e6a25772"
+    },
+    "tb-d4-line": {
+      "rows": 40,
+      "numeric_sha256": "d27f978eba92dc4da18d672f529dbc7b37a75a3efcad91d35d6402eda3a1dcdf"
+    },
+    "tb-d4-line-create": {
+      "rows": 40,
+      "numeric_sha256": "d1a71a6256e5fb5192f026ca18909f2779ff7ab71b68abc6f0a7d705e6a25772"
+    },
+    "tb-d4-line-read": {
+      "rows": 40,
+      "numeric_sha256": "d1a71a6256e5fb5192f026ca18909f2779ff7ab71b68abc6f0a7d705e6a25772"
+    },
+    "tb-d4-multiseries": {
+      "rows": 40,
+      "numeric_sha256": "d27f978eba92dc4da18d672f529dbc7b37a75a3efcad91d35d6402eda3a1dcdf"
+    },
+    "tb-d4-two-criteria": {
+      "rows": 40,
+      "numeric_sha256": "d1a71a6256e5fb5192f026ca18909f2779ff7ab71b68abc6f0a7d705e6a25772"
+    },
+    "tb-d5-pie-band": {
+      "rows": 9,
+      "numeric_sha256": "c3017a8248d068ceda8aafe9dfe432fedc06e0db8b9d114df4679fc5c922ba49"
+    },
+    "tb-d5-pie-band-create": {
+      "rows": 40,
+      "numeric_sha256": "5f9a40e3b774d022957927f4677257100c3d5fc1741e6a8936b3425a2b508def"
+    },
+    "tb-d5-pie-band-read": {
+      "rows": 9,
+      "numeric_sha256": "c3017a8248d068ceda8aafe9dfe432fedc06e0db8b9d114df4679fc5c922ba49"
+    },
+    "tb-d5-stat-analyze": {
+      "rows": 4,
+      "numeric_sha256": "9d436d96607d0ffd55743a77b14c1b2d80f64f9c3785a72e76b0fadf9e00c5fc"
+    },
+    "tb-d5-stat-conclude": {
+      "rows": 4,
+      "numeric_sha256": "82f54ae160ea0684b67c9506036cec49a5359bdf13af0731abafcd2ad3e71789"
+    },
+    "tb-d5-stat-cycle": {
+      "rows": 4,
+      "numeric_sha256": "ca11d78c501109b097bee149ddddd7d4083734ef411024ad2c69ccecfedb6b2f"
+    },
+    "tb-d5-stat-plan": {
+      "rows": 4,
+      "numeric_sha256": "15d484e1bbdbdae34b688621d553e1fb75122e6740dd8c0664a88da3f57bbfe5"
+    },
+    "tb-d5-stat-problem": {
+      "rows": 4,
+      "numeric_sha256": "0555ef8f5cdecd6379c534febc5c1bec84272f6fa9da17e3391a26a7023938f7"
+    },
+    "tb-d6-cases": {
+      "rows": 40,
+      "numeric_sha256": "5e26c88d4668c87da95600fa3bce41370429ee8399d6a529757bbceaef69f630"
+    },
+    "tb-d6-cases-systematic": {
+      "rows": 5,
+      "numeric_sha256": "4a324e0d5568f3c4c308b3954e93b8360ee44ff5c09488452427a0ae333af8f0"
+    },
+    "tb-d6-center": {
+      "rows": 40,
+      "numeric_sha256": "d1a71a6256e5fb5192f026ca18909f2779ff7ab71b68abc6f0a7d705e6a25772"
+    },
+    "tb-d6-critical": {
+      "rows": 4,
+      "numeric_sha256": "9d436d96607d0ffd55743a77b14c1b2d80f64f9c3785a72e76b0fadf9e00c5fc"
+    },
+    "tb-d6-distribution": {
+      "rows": 40,
+      "numeric_sha256": "d27f978eba92dc4da18d672f529dbc7b37a75a3efcad91d35d6402eda3a1dcdf"
+    },
+    "tb-d6-dotplot": {
+      "rows": 40,
+      "numeric_sha256": "d27f978eba92dc4da18d672f529dbc7b37a75a3efcad91d35d6402eda3a1dcdf"
+    },
+    "tb-d6-histogram": {
+      "rows": 9,
+      "numeric_sha256": "c5b18f6f090715bc698a76ac1e97939ce0c673b063e07b1121c3553b7078b5a0"
+    },
+    "tb-d6-median": {
+      "rows": 40,
+      "numeric_sha256": "d1a71a6256e5fb5192f026ca18909f2779ff7ab71b68abc6f0a7d705e6a25772"
+    },
+    "tb-d6-mode": {
+      "rows": 40,
+      "numeric_sha256": "94a384d31b6335e078e60a644fe9a551f646cd0460ffac2c206ff75e2b6eea29"
+    },
+    "tb-d6-stat-choice": {
+      "rows": 4,
+      "numeric_sha256": "82f54ae160ea0684b67c9506036cec49a5359bdf13af0731abafcd2ad3e71789"
+    },
+    "tb-f2-simple-frac": {
+      "rows": 5,
+      "numeric_sha256": "4b07b63208d28c9e7a53f8d137e484aa3dbb81b21f755c51ab39ac156416aabf"
+    },
+    "tb-f3-dec-frac-tenth": {
+      "rows": 19,
+      "numeric_sha256": "fb2b555a6298c001c2895b6f34536977c6aa7685676da7bbd2ead1385ebd8d29"
+    },
+    "tb-f3-dec-meaning": {
+      "rows": 19,
+      "numeric_sha256": "fb2b555a6298c001c2895b6f34536977c6aa7685676da7bbd2ead1385ebd8d29"
+    },
+    "tb-f3-frac-comparable": {
+      "rows": 10,
+      "numeric_sha256": "33e9fdfb4d2523d6316e71f9a2fa3df9bc8b04dd0efeb3c1ff4fb08db7a41e25"
+    },
+    "tb-f3-frac-meaning": {
+      "rows": 10,
+      "numeric_sha256": "6aebfec4c4c43c726c00a2a04766fd31563eae55899daad9ba7a5bb95253d893"
+    },
+    "tb-f4-dec-addsub": {
+      "rows": 40,
+      "numeric_sha256": "244afe22856d522f1dba7f990182febeb2248d2600bc3f974e5b9087b8313681"
+    },
+    "tb-f4-dec-relative": {
+      "rows": 29,
+      "numeric_sha256": "57e03370cbf8aa53833105949efceea7485a74d02a89336f959850ad7e4fdc27"
+    },
+    "tb-f4-dec-times": {
+      "rows": 29,
+      "numeric_sha256": "8d11d9b12f2ff1eae8d705e2b618d0816954e07f258e5f53efc0de2b10492941"
+    },
+    "tb-f4-equivalent-frac": {
+      "rows": 10,
+      "numeric_sha256": "9f2818412d8dccba5f822c58f3166856aecfd8ffb47b35d8a5ad897f60f917d3"
+    },
+    "tb-f4-frac-mixed": {
+      "rows": 40,
+      "numeric_sha256": "ae1fd8ae2a019d7432554ed05294a555ad110f8b45b8dac9292fccc54cd35ac4"
+    },
+    "tb-f4-fraction-types": {
+      "rows": 4,
+      "numeric_sha256": "15d484e1bbdbdae34b688621d553e1fb75122e6740dd8c0664a88da3f57bbfe5"
+    },
+    "tb-f5-dec-div-meaning": {
+      "rows": 40,
+      "numeric_sha256": "bffda60e085a87d728a048f83448140b77429b28b850d7a8ae3245779fe5405d"
+    },
+    "tb-f5-dec-mul-meaning": {
+      "rows": 40,
+      "numeric_sha256": "113b61209b649a46bf27ef9df8b8d0a7e897c34caf6e1870781c56a23004cd36"
+    },
+    "tb-f5-div-as-frac": {
+      "rows": 40,
+      "numeric_sha256": "3e5e5a0fee80e477e1b52778a57e764f650d1a15de9a7163a40082ab044a4209"
+    },
+    "tb-f5-frac-meaning-integrate": {
+      "rows": 40,
+      "numeric_sha256": "3e5e5a0fee80e477e1b52778a57e764f650d1a15de9a7163a40082ab044a4209"
+    },
+    "tb-f5-frac-number-rel": {
+      "rows": 40,
+      "numeric_sha256": "5e26c88d4668c87da95600fa3bce41370429ee8399d6a529757bbceaef69f630"
+    },
+    "tb-f5-frac-order-diffden": {
+      "rows": 40,
+      "numeric_sha256": "5504b98ea0ac86d7cdc0fa33b285728013d02c14d2cc56765d2c32fb255f4808"
+    },
+    "tb-f5-frac-to-dec": {
+      "rows": 9,
+      "numeric_sha256": "c008844b39816b5d93ad93bda884683d39e1f38be541e083bae9d25df5e8ab5b"
+    },
+    "tb-f6-frac-dec-mix": {
+      "rows": 40,
+      "numeric_sha256": "011e1be8816a9756289199c50f82f6439e177130a4aac33393fe17dfde5c6868"
+    },
+    "tb-f6-frac-div-int": {
+      "rows": 40,
+      "numeric_sha256": "e600bc6192eda1a83191c40888af4905f6195dd5d1274ad8f691da504fdaba07"
+    },
+    "tb-f6-frac-div-meaning": {
+      "rows": 40,
+      "numeric_sha256": "5e26c88d4668c87da95600fa3bce41370429ee8399d6a529757bbceaef69f630"
+    },
+    "tb-f6-frac-mul-int": {
+      "rows": 40,
+      "numeric_sha256": "3e5e5a0fee80e477e1b52778a57e764f650d1a15de9a7163a40082ab044a4209"
+    },
+    "tb-f6-frac-mul-meaning": {
+      "rows": 40,
+      "numeric_sha256": "3e5e5a0fee80e477e1b52778a57e764f650d1a15de9a7163a40082ab044a4209"
+    },
+    "tb-g1-compose-decompose": {
+      "rows": 6,
+      "numeric_sha256": "aa2634f224df490e4cbdf42212e5230d87964d8c948d8029438584c2f27a8dca"
+    },
+    "tb-g1-position": {
+      "rows": 40,
+      "numeric_sha256": "d1a71a6256e5fb5192f026ca18909f2779ff7ab71b68abc6f0a7d705e6a25772"
+    },
+    "tb-g1-shape-features": {
+      "rows": 4,
+      "numeric_sha256": "d2598fe04db25a57192a64b7e485404ace876d3296e027471c9e8d3109182c9d"
+    },
+    "tb-g2-box-shape": {
+      "rows": 4,
+      "numeric_sha256": "95ecc49ca09974b5db7ad11991cab3f2d0c1d13e13bf40cb73f6abcdd5296c90"
+    },
+    "tb-g2-elements": {
+      "rows": 5,
+      "numeric_sha256": "39be98092b05232c95a638d17018ab313df745965debba70d316473f9c895e8a"
+    },
+    "tb-g2-rect-square-righttri": {
+      "rows": 4,
+      "numeric_sha256": "910ab938b523a3a6b95c9d65ffd1e4b3cf58f3cfaf67fc194ecfba93e210ed4c"
+    },
+    "tb-g2-tri-quad": {
+      "rows": 4,
+      "numeric_sha256": "15d484e1bbdbdae34b688621d553e1fb75122e6740dd8c0664a88da3f57bbfe5"
+    },
+    "tb-g3-angle": {
+      "rows": 3,
+      "numeric_sha256": "f06598dd84b384f3d7a7d326c526bc71df273de694025b822be79bb924f093b7"
+    },
+    "tb-g3-circle-elements": {
+      "rows": 12,
+      "numeric_sha256": "8a08b5edc0499533752e7f86f63825bb6515ba8bc992599616e70c2bebb0c505"
+    },
+    "tb-g3-isosceles-equilateral": {
+      "rows": 4,
+      "numeric_sha256": "9d436d96607d0ffd55743a77b14c1b2d80f64f9c3785a72e76b0fadf9e00c5fc"
+    },
+    "tb-g3-sphere": {
+      "rows": 4,
+      "numeric_sha256": "15d484e1bbdbdae34b688621d553e1fb75122e6740dd8c0664a88da3f57bbfe5"
+    },
+    "tb-g4-cube-cuboid": {
+      "rows": 9,
+      "numeric_sha256": "72cea009230e972fb9bdcd88527167086583f9add321390fe0dec7ba642ee68c"
+    },
+    "tb-g4-lines-planes": {
+      "rows": 4,
+      "numeric_sha256": "ca11d78c501109b097bee149ddddd7d4083734ef411024ad2c69ccecfedb6b2f"
+    },
+    "tb-g4-net-view": {
+      "rows": 4,
+      "numeric_sha256": "9d436d96607d0ffd55743a77b14c1b2d80f64f9c3785a72e76b0fadf9e00c5fc"
+    },
+    "tb-g4-parallel-perp": {
+      "rows": 4,
+      "numeric_sha256": "15d484e1bbdbdae34b688621d553e1fb75122e6740dd8c0664a88da3f57bbfe5"
+    },
+    "tb-g4-position-coordinate": {
+      "rows": 40,
+      "numeric_sha256": "c921d6eddbc401cbcafd21aa5cb1d31ae819ce08e41dc992797c37e67a8c23ee"
+    },
+    "tb-g4-quad-properties": {
+      "rows": 4,
+      "numeric_sha256": "15d484e1bbdbdae34b688621d553e1fb75122e6740dd8c0664a88da3f57bbfe5"
+    },
+    "tb-g4-quadrilaterals": {
+      "rows": 4,
+      "numeric_sha256": "15d484e1bbdbdae34b688621d553e1fb75122e6740dd8c0664a88da3f57bbfe5"
+    },
+    "tb-g5-angle-sum-quad": {
+      "rows": 121,
+      "numeric_sha256": "a4f9e8125142289cc12b6e5bad99f9110d05e99f57517ee6db43b1d4ab56b0dd"
+    },
+    "tb-g5-circumference-diameter": {
+      "rows": 12,
+      "numeric_sha256": "c5b2222d30943fd66f38d5b2f114b98aed0280ab6b26f00492228c3635a893e4"
+    },
+    "tb-g5-congruence": {
+      "rows": 11,
+      "numeric_sha256": "f35d6cb7216dbbc9df2cb07808d5e7404f5d6587fe69749b6cc7d8874f128213"
+    },
+    "tb-g5-pi": {
+      "rows": 12,
+      "numeric_sha256": "1a52e1624785c434c27cdf5d1cfda9cd8d83293de08718e3e27792ead7c41dcc"
+    },
+    "tb-g5-polygons": {
+      "rows": 6,
+      "numeric_sha256": "cefaa4f745a820ff66add8a5a6264ee95b7661b54cb1170bb8fb441d2662ac19"
+    },
+    "tb-g5-prism-cylinder": {
+      "rows": 4,
+      "numeric_sha256": "15d484e1bbdbdae34b688621d553e1fb75122e6740dd8c0664a88da3f57bbfe5"
+    },
+    "tb-g5-prism-net": {
+      "rows": 4,
+      "numeric_sha256": "13fb0ca27a85c32af9afeee2389830813f4c1c6db5fcf7a0ee0d2d974b8ef759"
+    },
+    "tb-g5-regular-polygon": {
+      "rows": 6,
+      "numeric_sha256": "f61c7cb8c321256d5409654aec2913bf175dd80e31b8e52eb178ca78a34e0332"
+    },
+    "tb-g6-scale-correspondence": {
+      "rows": 40,
+      "numeric_sha256": "d27f978eba92dc4da18d672f529dbc7b37a75a3efcad91d35d6402eda3a1dcdf"
+    },
+    "tb-g6-scale-shape": {
+      "rows": 40,
+      "numeric_sha256": "5e26c88d4668c87da95600fa3bce41370429ee8399d6a529757bbceaef69f630"
+    },
+    "tb-g6-symmetry": {
+      "rows": 4,
+      "numeric_sha256": "ca11d78c501109b097bee149ddddd7d4083734ef411024ad2c69ccecfedb6b2f"
+    },
+    "tb-g6-symmetry-properties": {
+      "rows": 12,
+      "numeric_sha256": "c5b2222d30943fd66f38d5b2f114b98aed0280ab6b26f00492228c3635a893e4"
+    },
+    "tb-m-conservation": {
+      "rows": 4,
+      "numeric_sha256": "ca11d78c501109b097bee149ddddd7d4083734ef411024ad2c69ccecfedb6b2f"
+    },
+    "tb-m-corresponding-pairs": {
+      "rows": 40,
+      "numeric_sha256": "94a384d31b6335e078e60a644fe9a551f646cd0460ffac2c206ff75e2b6eea29"
+    },
+    "tb-m-covariation": {
+      "rows": 40,
+      "numeric_sha256": "5e26c88d4668c87da95600fa3bce41370429ee8399d6a529757bbceaef69f630"
+    },
+    "tb-m-equalgroups": {
+      "rows": 40,
+      "numeric_sha256": "5e26c88d4668c87da95600fa3bce41370429ee8399d6a529757bbceaef69f630"
+    },
+    "tb-m-equivalence": {
+      "rows": 10,
+      "numeric_sha256": "9f2818412d8dccba5f822c58f3166856aecfd8ffb47b35d8a5ad897f60f917d3"
+    },
+    "tb-m-inverse-operation": {
+      "rows": 40,
+      "numeric_sha256": "d27f978eba92dc4da18d672f529dbc7b37a75a3efcad91d35d6402eda3a1dcdf"
+    },
+    "tb-m-iteration": {
+      "rows": 40,
+      "numeric_sha256": "5e26c88d4668c87da95600fa3bce41370429ee8399d6a529757bbceaef69f630"
+    },
+    "tb-m-model": {
+      "rows": 40,
+      "numeric_sha256": "5e26c88d4668c87da95600fa3bce41370429ee8399d6a529757bbceaef69f630"
+    },
+    "tb-m-partwhole": {
+      "rows": 40,
+      "numeric_sha256": "d27f978eba92dc4da18d672f529dbc7b37a75a3efcad91d35d6402eda3a1dcdf"
+    },
+    "tb-m-reasonableness": {
+      "rows": 4,
+      "numeric_sha256": "9d436d96607d0ffd55743a77b14c1b2d80f64f9c3785a72e76b0fadf9e00c5fc"
+    },
+    "tb-m-reference-unit": {
+      "rows": 40,
+      "numeric_sha256": "d27f978eba92dc4da18d672f529dbc7b37a75a3efcad91d35d6402eda3a1dcdf"
+    },
+    "tb-m-relative": {
+      "rows": 40,
+      "numeric_sha256": "d27f978eba92dc4da18d672f529dbc7b37a75a3efcad91d35d6402eda3a1dcdf"
+    },
+    "tb-m-represent": {
+      "rows": 40,
+      "numeric_sha256": "5e26c88d4668c87da95600fa3bce41370429ee8399d6a529757bbceaef69f630"
+    },
+    "tb-m-unitize": {
+      "rows": 40,
+      "numeric_sha256": "5e26c88d4668c87da95600fa3bce41370429ee8399d6a529757bbceaef69f630"
+    },
+    "tb-me1-arbitrary-unit": {
+      "rows": 40,
+      "numeric_sha256": "d1a71a6256e5fb5192f026ca18909f2779ff7ab71b68abc6f0a7d705e6a25772"
+    },
+    "tb-me1-area-compare": {
+      "rows": 30,
+      "numeric_sha256": "3bf774f1eec82842c59b7d8105acb41520c13000e3e574e3060c599cffea5e93"
+    },
+    "tb-me1-capacity-compare": {
+      "rows": 30,
+      "numeric_sha256": "3bf774f1eec82842c59b7d8105acb41520c13000e3e574e3060c599cffea5e93"
+    },
+    "tb-me1-clock": {
+      "rows": 12,
+      "numeric_sha256": "c5b2222d30943fd66f38d5b2f114b98aed0280ab6b26f00492228c3635a893e4"
+    },
+    "tb-me1-direct-compare": {
+      "rows": 40,
+      "numeric_sha256": "7cb0384fe0b5c92d917fe4763ed8c1fc93be025380dd1872a2b895a97ff2974b"
+    },
+    "tb-me1-indirect-compare": {
+      "rows": 30,
+      "numeric_sha256": "3bf774f1eec82842c59b7d8105acb41520c13000e3e574e3060c599cffea5e93"
+    },
+    "tb-me1-length-compare": {
+      "rows": 30,
+      "numeric_sha256": "3bf774f1eec82842c59b7d8105acb41520c13000e3e574e3060c599cffea5e93"
+    },
+    "tb-me1-quantity-attribute": {
+      "rows": 4,
+      "numeric_sha256": "15d484e1bbdbdae34b688621d553e1fb75122e6740dd8c0664a88da3f57bbfe5"
+    },
+    "tb-me2-estimate-unit": {
+      "rows": 4,
+      "numeric_sha256": "82f54ae160ea0684b67c9506036cec49a5359bdf13af0731abafcd2ad3e71789"
+    },
+    "tb-me2-length-unit": {
+      "rows": 20,
+      "numeric_sha256": "9dc64d93886c4bdaff2018eb6650725c405dfe2272d4bc50a07dfea078172d8d"
+    },
+    "tb-me3-length-measure": {
+      "rows": 40,
+      "numeric_sha256": "d27f978eba92dc4da18d672f529dbc7b37a75a3efcad91d35d6402eda3a1dcdf"
+    },
+    "tb-me3-metric-prefix": {
+      "rows": 9,
+      "numeric_sha256": "483aab4cf73f026892c1fb189fb08337b5c1121e08196754b4388fd280709f38"
+    },
+    "tb-me3-metric-structure": {
+      "rows": 9,
+      "numeric_sha256": "483aab4cf73f026892c1fb189fb08337b5c1121e08196754b4388fd280709f38"
+    },
+    "tb-me3-weight-measure": {
+      "rows": 40,
+      "numeric_sha256": "384a0513132b32cee9b1673cd622a000072d7596ce3a705127e730d52a53573b"
+    },
+    "tb-me4-area-a-ha": {
+      "rows": 9,
+      "numeric_sha256": "dd3be25993b0e4559e9e8965c8613b71eb7e5e212a2688b68c96eabd9c183fc2"
+    },
+    "tb-me4-area-unit": {
+      "rows": 9,
+      "numeric_sha256": "5d710d69dc12d0ec88cbe75601dbfa9ae497c2a7850d3a6fc84bff98c4ea7bdf"
+    },
+    "tb-me5-volume-capacity": {
+      "rows": 9,
+      "numeric_sha256": "483aab4cf73f026892c1fb189fb08337b5c1121e08196754b4388fd280709f38"
+    },
+    "tb-me5-volume-prop": {
+      "rows": 40,
+      "numeric_sha256": "5e26c88d4668c87da95600fa3bce41370429ee8399d6a529757bbceaef69f630"
+    },
+    "tb-me5-volume-unit": {
+      "rows": 9,
+      "numeric_sha256": "2d2bc089b973c3f1d4e893ee026728d53b575cfd2a3620047f8e8d3e19a753f9"
+    },
+    "tb-me6-approx-area": {
+      "rows": 40,
+      "numeric_sha256": "d1a71a6256e5fb5192f026ca18909f2779ff7ab71b68abc6f0a7d705e6a25772"
+    },
+    "tb-n1-equal-share": {
+      "rows": 40,
+      "numeric_sha256": "94a384d31b6335e078e60a644fe9a551f646cd0460ffac2c206ff75e2b6eea29"
+    },
+    "tb-n1-three-digit-simple": {
+      "rows": 10,
+      "numeric_sha256": "74615b5040b7b44a13090a90f3be571181f56280f946b8d56980ffac7faf3033"
+    },
+    "tb-n1-two-digit": {
+      "rows": 40,
+      "numeric_sha256": "064b7e1acf16901aff048d0679f5c65aaa3c4b932a07c83002117dfea70cf3b5"
+    },
+    "tb-n2-add-estimate": {
+      "rows": 40,
+      "numeric_sha256": "384a0513132b32cee9b1673cd622a000072d7596ce3a705127e730d52a53573b"
+    },
+    "tb-n2-classify-number": {
+      "rows": 4,
+      "numeric_sha256": "eede3164b3053898f099c5471b3f1ddf8f00fa8a43fadb5edb970e0df53e4b17"
+    },
+    "tb-n2-group-count-strategy": {
+      "rows": 40,
+      "numeric_sha256": "5e26c88d4668c87da95600fa3bce41370429ee8399d6a529757bbceaef69f630"
+    },
+    "tb-n2-relative": {
+      "rows": 9,
+      "numeric_sha256": "aeeb34f79740d5bfbf149d15d70cc9f62acb2e82475ebd98e3bed6e134d0dfa8"
+    },
+    "tb-n2-unit-ten-hundred-thousand": {
+      "rows": 9,
+      "numeric_sha256": "c3017a8248d068ceda8aafe9dfe432fedc06e0db8b9d114df4679fc5c922ba49"
+    },
+    "tb-n3-hundred-million": {
+      "rows": 10,
+      "numeric_sha256": "718c0ed7f4dd917f404e44a403b577a15d4b41088578d61a3f91299699528859"
+    },
+    "tb-n4-estimate": {
+      "rows": 40,
+      "numeric_sha256": "b63223d6a5d7d6b6f48834548229c5234e41a75090a3cd54c3b8e187fe9fd702"
+    },
+    "tb-n4-oku-cho": {
+      "rows": 30,
+      "numeric_sha256": "9555520344a7bea256468294045eb90eb28efc3bbbb510e72d7b944d0a025bad"
+    },
+    "tb-n4-purposeful-rounding": {
+      "rows": 4,
+      "numeric_sha256": "82f54ae160ea0684b67c9506036cec49a5359bdf13af0731abafcd2ad3e71789"
+    },
+    "tb-n4-round-meaning": {
+      "rows": 8,
+      "numeric_sha256": "b86385415824e799b8ed250d2839fd8ac7864593e64e1ea2cda8a886c34b22f5"
+    },
+    "tb-o1-addsub-2digit-simple": {
+      "rows": 40,
+      "numeric_sha256": "384a0513132b32cee9b1673cd622a000072d7596ce3a705127e730d52a53573b"
+    },
+    "tb-o2-add-assoc": {
+      "rows": 512,
+      "numeric_sha256": "5ee3294319209756dcc27fd137263b03ab99c8cf32b68e75e9bb0585810a6e55"
+    },
+    "tb-o2-add-exchange": {
+      "rows": 40,
+      "numeric_sha256": "d1a71a6256e5fb5192f026ca18909f2779ff7ab71b68abc6f0a7d705e6a25772"
+    },
+    "tb-o2-addsub-3simple": {
+      "rows": 40,
+      "numeric_sha256": "e12f4f3a314bbf748b5a79f912cab98c92c6ab68303bb1f6cad1ee2bf08dac58"
+    },
+    "tb-o2-addsub-properties": {
+      "rows": 40,
+      "numeric_sha256": "d27f978eba92dc4da18d672f529dbc7b37a75a3efcad91d35d6402eda3a1dcdf"
+    },
+    "tb-o2-mul-exchange": {
+      "rows": 40,
+      "numeric_sha256": "5e26c88d4668c87da95600fa3bce41370429ee8399d6a529757bbceaef69f630"
+    },
+    "tb-o2-mul-expression": {
+      "rows": 40,
+      "numeric_sha256": "d27f978eba92dc4da18d672f529dbc7b37a75a3efcad91d35d6402eda3a1dcdf"
+    },
+    "tb-o2-mul-meaning": {
+      "rows": 40,
+      "numeric_sha256": "5e26c88d4668c87da95600fa3bce41370429ee8399d6a529757bbceaef69f630"
+    },
+    "tb-o2-mul-properties": {
+      "rows": 40,
+      "numeric_sha256": "94a384d31b6335e078e60a644fe9a551f646cd0460ffac2c206ff75e2b6eea29"
+    },
+    "tb-o2-tens-mul": {
+      "rows": 40,
+      "numeric_sha256": "b63223d6a5d7d6b6f48834548229c5234e41a75090a3cd54c3b8e187fe9fd702"
+    },
+    "tb-o3-addsub-large": {
+      "rows": 40,
+      "numeric_sha256": "ecb0ce5432e3a029230021f701ef0bf904e55034862e1759f25412d6b6e5d28e"
+    },
+    "tb-o3-check-strategy": {
+      "rows": 40,
+      "numeric_sha256": "5e26c88d4668c87da95600fa3bce41370429ee8399d6a529757bbceaef69f630"
+    },
+    "tb-o3-distributive": {
+      "rows": 200,
+      "numeric_sha256": "c17b364d39a64b8933615b864e028932eeee8934b2d73bceb1276013958a6e3f"
+    },
+    "tb-o3-estimate": {
+      "rows": 40,
+      "numeric_sha256": "b63223d6a5d7d6b6f48834548229c5234e41a75090a3cd54c3b8e187fe9fd702"
+    },
+    "tb-o3-soroban": {
+      "rows": 5,
+      "numeric_sha256": "36ffcc6a6b9742ab5c068535c8f861f9339e3c537e910eda4a0c56f5e780fe6f"
+    },
+    "tb-o4-div-properties": {
+      "rows": 40,
+      "numeric_sha256": "94a384d31b6335e078e60a644fe9a551f646cd0460ffac2c206ff75e2b6eea29"
+    },
+    "tb-o4-four-properties": {
+      "rows": 200,
+      "numeric_sha256": "c17b364d39a64b8933615b864e028932eeee8934b2d73bceb1276013958a6e3f"
+    },
+    "tb-o4-soroban": {
+      "rows": 5,
+      "numeric_sha256": "e7d5b0503f192ff51dff8a775ac3ca19250bed91105e16c42d509e773ef2e70c"
+    },
+    "tb-o5-dec-properties": {
+      "rows": 475,
+      "numeric_sha256": "f17ef01d57417c3409b74c23907daed6a32f16dd8494557df12099f551ea39c2"
+    },
+    "tb-o6-frac-properties": {
+      "rows": 40,
+      "numeric_sha256": "971e7c0e1cf0aeffc28ef59662fd370856494aa889cc85d503be5dbbc426e897"
+    },
+    "tb-r2-product-view": {
+      "rows": 40,
+      "numeric_sha256": "94a384d31b6335e078e60a644fe9a551f646cd0460ffac2c206ff75e2b6eea29"
+    },
+    "tb-r3-relative-number": {
+      "rows": 40,
+      "numeric_sha256": "d27f978eba92dc4da18d672f529dbc7b37a75a3efcad91d35d6402eda3a1dcdf"
+    },
+    "tb-r4-base-comparison": {
+      "rows": 8,
+      "numeric_sha256": "da4f8e26f481bf43cf4fafbed7794120fba0f41cc5232ca3dac8cb0bd25fcd2d"
+    },
+    "tb-r4-change-feature": {
+      "rows": 40,
+      "numeric_sha256": "d27f978eba92dc4da18d672f529dbc7b37a75a3efcad91d35d6402eda3a1dcdf"
+    },
+    "tb-r4-covary": {
+      "rows": 40,
+      "numeric_sha256": "5e26c88d4668c87da95600fa3bce41370429ee8399d6a529757bbceaef69f630"
+    },
+    "tb-r4-difference-or-ratio": {
+      "rows": 4,
+      "numeric_sha256": "ca11d78c501109b097bee149ddddd7d4083734ef411024ad2c69ccecfedb6b2f"
+    },
+    "tb-r4-find-related-quantity": {
+      "rows": 40,
+      "numeric_sha256": "5e26c88d4668c87da95600fa3bce41370429ee8399d6a529757bbceaef69f630"
+    },
+    "tb-r4-linegraph-relation": {
+      "rows": 40,
+      "numeric_sha256": "5e26c88d4668c87da95600fa3bce41370429ee8399d6a529757bbceaef69f630"
+    },
+    "tb-r4-simple-ratio": {
+      "rows": 40,
+      "numeric_sha256": "d27f978eba92dc4da18d672f529dbc7b37a75a3efcad91d35d6402eda3a1dcdf"
+    },
+    "tb-r4-table-expression": {
+      "rows": 40,
+      "numeric_sha256": "5e26c88d4668c87da95600fa3bce41370429ee8399d6a529757bbceaef69f630"
+    },
+    "tb-r5-percent-expression": {
+      "rows": 19,
+      "numeric_sha256": "53b855c4358e6d2e3afde877972b5156f74d3a79ff2419268ae1d2a6be65d634"
+    },
+    "tb-r5-proportional-assumption": {
+      "rows": 4,
+      "numeric_sha256": "ca11d78c501109b097bee149ddddd7d4083734ef411024ad2c69ccecfedb6b2f"
+    },
+    "tb-r5-simple-prop": {
+      "rows": 40,
+      "numeric_sha256": "5e26c88d4668c87da95600fa3bce41370429ee8399d6a529757bbceaef69f630"
+    },
+    "tb-r5-speed-three": {
+      "rows": 40,
+      "numeric_sha256": "5e26c88d4668c87da95600fa3bce41370429ee8399d6a529757bbceaef69f630"
+    },
+    "tb-r5-unitize-per1": {
+      "rows": 40,
+      "numeric_sha256": "94a384d31b6335e078e60a644fe9a551f646cd0460ffac2c206ff75e2b6eea29"
+    },
+    "tb-r6-prop-apply": {
+      "rows": 40,
+      "numeric_sha256": "acc4edf376ac8b39ac13cde5ca73ea240b278a523a9cf28b016a223ec483ec8d"
+    },
+    "tb-r6-ratio": {
+      "rows": 40,
+      "numeric_sha256": "488a7332ed689373fcb2c85a029b821d2e3527750eae4a3302fc5282a74a5176"
+    },
+    "tb-r6-ratio-meaning": {
+      "rows": 40,
+      "numeric_sha256": "955a9245387e0c39b0e4c70c247eeea51a33f071373ba0495e5786eabd72d03e"
+    },
+    "tb-r6-scale": {
+      "rows": 40,
+      "numeric_sha256": "d27f978eba92dc4da18d672f529dbc7b37a75a3efcad91d35d6402eda3a1dcdf"
+    },
+    "tb-x-all-communicate": {
+      "rows": 4,
+      "numeric_sha256": "ca11d78c501109b097bee149ddddd7d4083734ef411024ad2c69ccecfedb6b2f"
+    },
+    "tb-x-all-model": {
+      "rows": 4,
+      "numeric_sha256": "82f54ae160ea0684b67c9506036cec49a5359bdf13af0731abafcd2ad3e71789"
+    },
+    "tb-x-all-reflect": {
+      "rows": 4,
+      "numeric_sha256": "15d484e1bbdbdae34b688621d553e1fb75122e6740dd8c0664a88da3f57bbfe5"
+    },
+    "tb-x1-picture-to-expression": {
+      "rows": 40,
+      "numeric_sha256": "d1a71a6256e5fb5192f026ca18909f2779ff7ab71b68abc6f0a7d705e6a25772"
+    },
+    "tb-x1-read-expression": {
+      "rows": 40,
+      "numeric_sha256": "d1a71a6256e5fb5192f026ca18909f2779ff7ab71b68abc6f0a7d705e6a25772"
+    },
+    "tb-x2-mul-expression-read": {
+      "rows": 40,
+      "numeric_sha256": "d27f978eba92dc4da18d672f529dbc7b37a75a3efcad91d35d6402eda3a1dcdf"
+    },
+    "tb-x2-parens-box": {
+      "rows": 512,
+      "numeric_sha256": "0c0c4c5610bf3c3457ec50ccbb3c89ff4d983832184d4e7b7f460e4d353d2606"
+    },
+    "tb-x2-word-op-choice": {
+      "rows": 4,
+      "numeric_sha256": "9d436d96607d0ffd55743a77b14c1b2d80f64f9c3785a72e76b0fadf9e00c5fc"
+    },
+    "tb-x3-box-expression": {
+      "rows": 40,
+      "numeric_sha256": "d27f978eba92dc4da18d672f529dbc7b37a75a3efcad91d35d6402eda3a1dcdf"
+    },
+    "tb-x3-diagram-expression": {
+      "rows": 40,
+      "numeric_sha256": "d27f978eba92dc4da18d672f529dbc7b37a75a3efcad91d35d6402eda3a1dcdf"
+    },
+    "tb-x4-formula": {
+      "rows": 40,
+      "numeric_sha256": "5e26c88d4668c87da95600fa3bce41370429ee8399d6a529757bbceaef69f630"
+    },
+    "tb-x4-formula-generalize": {
+      "rows": 40,
+      "numeric_sha256": "5e26c88d4668c87da95600fa3bce41370429ee8399d6a529757bbceaef69f630"
+    },
+    "tb-x4-symbol-expression": {
+      "rows": 40,
+      "numeric_sha256": "d1a71a6256e5fb5192f026ca18909f2779ff7ab71b68abc6f0a7d705e6a25772"
+    },
+    "tb-x5-expression-read-general": {
+      "rows": 40,
+      "numeric_sha256": "5e26c88d4668c87da95600fa3bce41370429ee8399d6a529757bbceaef69f630"
+    },
+    "tb-x5-quantity-expression": {
+      "rows": 40,
+      "numeric_sha256": "3e5e5a0fee80e477e1b52778a57e764f650d1a15de9a7163a40082ab044a4209"
+    },
+    "tb-x6-letter-meaning": {
+      "rows": 40,
+      "numeric_sha256": "5e26c88d4668c87da95600fa3bce41370429ee8399d6a529757bbceaef69f630"
+    }
+  }
+}

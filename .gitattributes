@@ -1,1 +1,5 @@
 * text=auto eol=lf
+# Publication descriptors hash exact bytes, including existing CRLF assets.
+/docs/** -text
+/verification.json -text
+/numeric-verification.json -text

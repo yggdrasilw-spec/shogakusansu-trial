@@ -1,39 +1,34 @@
-<!doctype html>
-<html lang="ja">
-<head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="referrer" content="no-referrer">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'none'; img-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
-  <title>計算の小さな練習室｜shogakusansuDB 試験版</title>
-  <link rel="stylesheet" href="./style.css"><script type="module" src="./client.mjs"></script>
-</head>
-<body>
-  <main>
-    <header><span class="tag">shogakusansuDB・試験版</span><h1>計算の小さな練習室</h1><p>ひとつずつ、じぶんのペースで。</p></header>
-    <section class="card" aria-labelledby="practice-title">
-      <h2 id="practice-title">何を練習する？</h2>
-      <nav id="modes" aria-label="計算の種類">
-        <button type="button" data-mode="add" aria-pressed="true">たし算</button><button type="button" data-mode="sub" aria-pressed="false">ひき算</button><button type="button" data-mode="mul" aria-pressed="false">かけ算</button><button type="button" data-mode="div" aria-pressed="false">わり算</button>
-      </nav>
-      <p id="range" class="muted"></p><p id="count" class="muted"></p>
-      <p id="question" class="equation" aria-label="問題"></p>
-      <form id="answer-form" novalidate>
-        <label for="answer">こたえ</label><div class="answer-row"><input id="answer" type="text" inputmode="numeric" autocomplete="off" maxlength="8" aria-describedby="input-message"><button id="submit" type="submit">たしかめる</button></div>
-      </form>
-      <p id="input-message" role="status"></p>
-      <section id="result" aria-live="polite" hidden><h2 id="verdict"></h2><p id="solution" class="solution"></p><p id="explanation"></p><button id="next" type="button">つぎの問題</button></section>
-      <p id="storage-message" class="muted" role="status"></p>
-    </section>
-    <details class="card"><summary>この試験版について</summary>
-      <p>一般的な四則計算だけの練習ツールです。問題文・説明・画面は、この試験版用にAIの支援で新しく作成しました。教科書の文章・画像や、既存DBの教材を配信していません。</p>
-      <p>機械による全問題の数値検査と画面検査を行っています。教師による独立確認は未実施です。成績、理解度、苦手の原因や教育効果を判定する機能はありません。</p>
-      <p>記録はこのブラウザー内だけに保存します。氏名の入力、広告、解析サービス、外部への回答送信はありません。ブラウザーのデータを消すと記録も消えます。</p>
-      <p>公開ソースへの掲載は、第三者の権利や商用再利用を一括して許諾するものではありません。数学的な事実そのものに独占的な利用条件を設定しません。詳細は<a href="./NOTICE.txt">由来と利用条件</a>をご覧ください。</p>
-      <button id="report" type="button">不具合の報告メモを保存</button><p id="report-message" role="status"></p>
-      <p>保存したメモは自動送信されません。回答履歴はメモに含めません。報告先：<a href="mailto:yggdrasil.w@gmail.com?subject=shogakusansuDB%20%E8%A8%88%E7%AE%97%E8%A9%A6%E9%A8%93%E7%89%88">yggdrasil.w@gmail.com</a>（メールアプリが開きます）。</p>
-      <button id="clear" type="button" class="secondary">この試験版の記録を消す</button>
-    </details>
-    <footer>計算練習・試験公開版 v1</footer>
-  </main>
-</body>
-</html>
+<!doctype html><html lang="ja">
+<meta charset="utf-8"><link rel="icon" href="data:,"><meta name="viewport" content="width=device-width, initial-scale=1"><title>さんすうステップ trial｜小1〜小6の算数</title><meta name="referrer" content="no-referrer"><link rel="stylesheet" href="./curriculum-trial.css"><link rel="stylesheet" href="./relearning.css">
+<body><header><a class="brand" href="./">✦ さんすうステップ <small>trial</small></a><nav aria-label="メニュー"><button id="go-home" class="nav active">はじめる</button><button id="go-map" class="nav">学びのマップ</button><button id="go-review" class="nav">おさらい <span id="due-count"></span></button></nav><button id="menu-toggle" class="menu-toggle secondary" aria-label="メニューと表示設定を開く" aria-haspopup="dialog" aria-controls="settings-drawer" aria-expanded="false"><span class="burger" aria-hidden="true"><i></i><i></i><i></i></span><span>メニュー</span></button></header>
+<main><p class="trial-banner">試験公開版 · 小1〜小6の281内容 · <a href="./arithmetic/">四則の練習室はこちら</a></p><div id="error" role="alert" hidden></div><div id="feedback" role="status" hidden></div>
+<section id="home"><div class="welcome"><span class="eyebrow">自分のペースで、少しずつ</span><h1>ひとつずつ、確かめよう。</h1><p>まずは6問。今の自分に合う一歩を。</p></div><div class="home-grid">
+<section class="start-card"><div class="spark" aria-hidden="true">✦</div><label for="auto-grade">学年のめやす</label><select id="auto-grade"><option value="">おまかせ</option><option value="1">1年</option><option value="2">2年</option><option value="3">3年</option><option value="4">4年</option><option value="5">5年</option><option value="6">6年</option></select><p id="recommended-label"></p><button id="start-recommended" class="big">おすすめから はじめる <span aria-hidden="true">→</span></button><small>回答を確かめてから次へ。途中で終えても保存されます。</small></section>
+<section class="pick-card"><h2>自分でえらぶ</h2><div id="entries" class="quick-picks"></div><button id="browse" class="secondary wide">マップからえらぶ →</button><details><summary>一覧からえらぶ</summary><div class="select-row"><select id="grade" aria-label="学年"><option value="">全学年</option><option value="1">1年</option><option value="2">2年</option><option value="3">3年</option><option value="4">4年</option><option value="5">5年</option><option value="6">6年</option></select><select id="topic" aria-label="学ぶ内容"></select></div><button id="start-selected" class="secondary">これをやってみる</button></details></section></div><section class="trial-browser" aria-labelledby="trial-browser-title">
+<h2 id="trial-browser-title">すべての内容からえらぶ</h2>
+<p>小1〜小6の281内容。計算、分数、図形、割合、表やグラフへ。</p>
+<label for="trial-search">ことばで探す<input id="trial-search" type="search" placeholder="例：分数、時計、割合" autocomplete="off"></label>
+<div class="trial-filters"><label>学年のめやす<select id="trial-grade"><option value="">全学年</option><option value="1">1年</option><option value="2">2年</option><option value="3">3年</option><option value="4">4年</option><option value="5">5年</option><option value="6">6年</option></select></label>
+<label>分野<select id="trial-area"><option value="">すべて</option><option value="0">数・たしひき</option><option value="1">かけわり</option><option value="2">小数・分数</option><option value="3">形・大きさ</option><option value="4">割合・変わり方</option><option value="5">表・グラフ</option><option value="6">考え方・式</option></select></label>
+<label>取り組み<select id="trial-progress"><option value="">すべて</option><option value="new">これから</option><option value="trying">やってみた</option><option value="checked">2問続けてできた</option><option value="review">おさらいの時期</option></select></label></div>
+<button id="trial-reset" class="quiet" type="button">絞り込みをもどす</button>
+<p id="trial-count" class="format" role="status" tabindex="-1"></p><div id="trial-catalog" class="trial-topics"></div>
+<div class="trial-pagination"><button id="trial-prev" class="secondary" type="button">前へ</button><span id="trial-page"></span><button id="trial-next" class="secondary" type="button">次へ</button></div></section><section id="summary" class="summary" hidden></section></section>
+<section id="map-screen" hidden><div class="screen-head"><div><h1>学びのマップ</h1><p>今日の取り組みから、次の一歩へ。</p></div><span id="map-count" class="pill"></span></div><div id="small-path" class="small-path"></div><details id="full-map"><summary>全体マップを自由に見る</summary><div id="domains" class="chips" aria-label="系統"></div><div class="map-toolbar"><div class="legend"><span>○ これから</span><span class="trying">● やってみた</span><span class="checked">✓ 2問できた</span><span class="review">↻ おさらい</span></div><label>学年 <select id="map-grade"><option value="">ぜんぶ</option><option value="1">1年</option><option value="2">2年</option><option value="3">3年</option><option value="4">4年</option><option value="5">5年</option><option value="6">6年</option></select></label></div><div id="tree-scroll" tabindex="0" aria-label="学びのつながり。横と縦にスクロールできます"><div id="tree"></div></div><p class="map-note">線は学びのつながり。色はここでの回答記録です。</p></details></section>
+<section id="review-screen" hidden><div class="screen-head"><div><h1>ちょっと、おさらい</h1><p>前にできたこと、覚えているかな？</p></div></div><div id="due" class="review-list"></div><details class="future"><summary>これからのおさらい</summary><div id="scheduled"></div></details></section>
+<section id="attempt" hidden><div class="attempt-top"><div><span id="mode" class="eyebrow"></span><h1 id="topic-title"></h1></div><button id="pause" class="quiet">おしまい</button></div><div id="steps" class="step-dots" aria-label="今回の取り組み"></div><div class="progress"><span id="bar"></span></div><div id="counter"></div><div class="problem-card"><div class="problem-scroll"><p id="question"></p><div id="visual-task" hidden></div><div id="choice-answers" class="answer-choices" hidden></div></div><form id="answer-form"><div id="answer-fields"></div><div id="format" class="format"></div><div class="answer-actions"><button type="submit" id="check-answer">答えを確かめる</button><button type="button" class="quiet" id="skip">わからない</button></div></form></div><div class="help-actions"><button id="hint" class="secondary">💡 ヒント</button><button id="reveal" class="secondary">答えと図解を見る</button></div></section>
+<section id="result-screen" hidden aria-labelledby="result-title">
+<div class="result-stamp" id="result-mark" aria-hidden="true"></div><h1 id="result-title" tabindex="-1"></h1>
+<div class="result-card"><p id="result-question"></p><div id="result-visual" hidden></div><p id="result-response"></p><p id="result-evidence" class="format"></p></div>
+<div class="result-actions"><button id="review-answer" class="secondary">この問題の答えと考え方を見る</button><button id="next-question">次の問題へ →</button></div><button id="finish-result" class="quiet">ここで終えて保存する</button></section></main><footer><button id="about" class="quiet">このアプリについて</button></footer>
+<dialog id="support-dialog" aria-labelledby="support-title"><div class="dialog-head"><h2 id="support-title">一緒に確かめましょう</h2><button id="close-support" class="quiet" aria-label="解説を閉じる">✕</button></div><div class="dialog-scroll"><div id="support" hidden></div><div id="textbook-lesson" hidden></div></div><button id="back-question" class="wide">閉じて戻る</button></dialog>
+<dialog id="node-dialog" aria-labelledby="node-title"><div class="dialog-head"><h2 id="node-title"></h2><button id="close-node" class="quiet" aria-label="内容を閉じる">✕</button></div><div class="dialog-scroll"><p id="node-status" class="pill"></p><div id="node-relations"></div></div><button id="node-start" class="wide">ここをやってみる →</button></dialog>
+<dialog id="about-dialog" aria-labelledby="about-title"><h2 id="about-title">さんすうステップ</h2><p>回答はこのブラウザーに保存されます。別の端末とは同期しません。</p><p>マップの「2問できた」は、別の問題をヒントなしで2回続けて答えた記録です。内容ぜんぶの理解を決めるものではありません。</p><p>問題えらびやおさらいの間隔は試作中です。</p><button id="export-record" class="secondary">記録を書き出す</button><label for="import-record">書き出した記録を選ぶ</label><input id="import-record" type="file" accept=".json,application/json"><p id="restore-status" role="status"></p><button id="confirm-restore" class="secondary" disabled>確認した記録で復元する</button><button id="export-recovery" class="secondary">復元前の控えを書き出す</button><button id="erase-record" class="quiet">このブラウザーの記録を消す</button><details class="trial-scope"><summary>試験版の範囲・記録・報告</summary>
+<p>全281内容に問題・採点・ヒント・図解・おさらいを接続した試験版です。作図や自由な説明を評価する機能は、まだありません。学年は選ぶためのめやすです。</p>
+<p>教材の本文や画像をそのまま配信せず、このプロジェクトで作成した問題文・計算で描く図・解説を使っています。AIの支援による制作・機械検証を含み、独立教師による全面確認は未実施です。回答記録は理解全体や苦手の原因、教育効果の判定ではありません。</p>
+<p>記録はこのブラウザーに保存します。広告・課金・解析サービス・外部への回答送信はありません。メニューから記録の書き出し・復元ができます。以前の四則trialの記録はそのまま残し、<a href="./arithmetic/">四則の練習室</a>で再開できます。</p>
+<p><a href="./NOTICE.txt">由来と利用条件</a> · <a href="./manifest.json">配信ファイルと検証範囲</a></p>
+<button id="trial-report" class="secondary" type="button">不具合の報告メモを保存</button><p id="trial-report-status" role="status"></p>
+<p>自動送信はしません。報告先：<a href="mailto:yggdrasil.w@gmail.com?subject=shogakusansuDB%20trial">yggdrasil.w@gmail.com</a></p></details><button id="close-about" class="wide">とじる</button></dialog>
+<dialog id="settings-drawer" aria-labelledby="settings-title"><div class="dialog-head"><div><span class="eyebrow">自分に合う、学びの時間</span><h2 id="settings-title">メニューと表示設定</h2></div><button id="close-settings" class="quiet" aria-label="メニューを閉じる">✕</button></div><nav class="drawer-nav" aria-label="画面をえらぶ"><button data-nav="go-home">はじめる <span aria-hidden="true">→</span></button><button data-nav="go-map">学びのマップ <span aria-hidden="true">→</span></button><button data-nav="go-review">おさらい <span aria-hidden="true">→</span></button></nav><p id="drawer-learning-note" class="format" hidden>今の取り組みを終えると、画面を切り替えられます。</p><section class="display-settings"><h3>読みやすさと動き</h3><fieldset><legend>文字の大きさ</legend><div class="setting-options"><label><input type="radio" name="text-size" value="standard" checked>標準</label><label><input type="radio" name="text-size" value="large">大きめ</label><label><input type="radio" name="text-size" value="extra">さらに大きめ</label></div></fieldset><fieldset><legend>画面の動き</legend><div class="setting-options"><label><input type="radio" name="motion" value="system" checked>端末に合わせる</label><label><input type="radio" name="motion" value="reduce">ひかえめ</label></div><p class="format">ひかえめでは、タップの波紋や自動再生を止めます。図解は一段ずつ進められます。</p></fieldset><label class="setting-toggle"><span>数える問題をりんごの絵にする<small>丸の表示にも切り替えられます</small></span><input id="picture-objects" type="checkbox" checked></label><p class="settings-preview">ひとつずつ、確かめよう。<span>12 ＋ 8 ＝ ?</span></p><p class="format">表示設定はこのブラウザーに保存されます。</p></section><button id="record-menu" class="secondary">学習記録の書き出し・復元</button><button id="settings-done" class="wide">この設定で戻る</button></dialog>
+<script src="./browser-client.js"></script><script src="./display-settings.js"></script><script src="./measurement-renderer.js"></script><script src="./textbook-renderer.js"></script><script src="./visual-renderer.js"></script><script src="./curriculum-trial.js"></script><script src="./relearning-ui.js"></script></body></html>
