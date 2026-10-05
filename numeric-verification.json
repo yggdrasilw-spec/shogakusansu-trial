@@ -2,7 +2,7 @@
   "status": "pass",
   "topics": 281,
   "rows": 82154,
-  "artifact_sha256": "b6a94f9ade4f3e83b5eb0a5a49f17545c86f6a31b7708382524d7cb410971dab",
+  "artifact_sha256": "b366007f055fc841db4d03d71261d5adc2be88a0887d7bbf3bcb492be25dbdb2",
   "method": "standalone integer/Fraction oracle; full set comparison; file hashes; authored explanations present",
   "teacher_review": "not_performed",
   "numeric_topics": {

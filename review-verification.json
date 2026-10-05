@@ -1,0 +1,36 @@
+{
+  "checks": [
+    "fraction-only form c-common",
+    "equal value, incorrect fraction form c-common",
+    "shown answer meets assigned form c-common",
+    "fraction-only form c-equivalent",
+    "equal value, incorrect fraction form c-equivalent",
+    "shown answer meets assigned form c-equivalent",
+    "fraction-only form c-reduce",
+    "equal value, incorrect fraction form c-reduce",
+    "shown answer meets assigned form c-reduce",
+    "invalid input is explained",
+    "invalid input does not advance question",
+    "hint retains numeric draft",
+    "full-width answer supported evidence",
+    "settings redraw preserves selected choice",
+    "choice submits independently",
+    "asset update preserves browser record contract",
+    "diagram scenes have renderers and finite coordinates",
+    "diagram text stays in the viewBox",
+    "large text home fits 320",
+    "large text home fits 390",
+    "large text home fits 768",
+    "large text home fits 1280",
+    "no browser exceptions"
+  ],
+  "errors": [],
+  "diagram_issues": [],
+  "diagrams": {
+    "scenes": 2286,
+    "bad": [],
+    "clipped": []
+  },
+  "status": "pass",
+  "artifact_sha256": "b366007f055fc841db4d03d71261d5adc2be88a0887d7bbf3bcb492be25dbdb2"
+}

@@ -11,10 +11,22 @@ const browserReady = (async () => {
   const options = {seed: () => crypto.getRandomValues(new Uint32Array(1))[0], uuid: () => crypto.randomUUID()};
   return {store, pack, loader, newState, transition, view, options};
 })();
+// Expose only the answer format, never the answer, in the question view.
+function browserPresentation(input, pack, view, now) {
+  const result = view(input, pack, now);
+  for (const key of ['pending', 'feedback']) {
+    if (!result[key]) continue;
+    const item = input.items[result[key].item_id];
+    result[key].item.form_policy = structuredClone(item.form_policy);
+    if (item.required_denominator !== undefined)
+      result[key].item.required_denominator = item.required_denominator;
+  }
+  return result;
+}
 window.learningTransport = {
   async state() {
     const {store,pack,view} = await browserReady;
-    return view(await store.read(), pack, new Date().toISOString());
+    return browserPresentation(await store.read(), pack, view, new Date().toISOString());
   },
   async action(action,data) {
     const {store,pack,loader,transition,view,options} = await browserReady;
@@ -22,7 +34,14 @@ window.learningTransport = {
     const result = await loader.run(input,transition,action,data,now,options);
     // Commit support before exposing it; commit answers before showing feedback.
     await store.write(result.state,input.revision);
-    return {...view(result.state,pack,now), ...(result.support ? {support:result.support} : {})};
+    if (result.support?.answer && typeof result.support.answer === 'object') {
+      const item = result.state.items[data.completed ? result.state.feedback.item_id : result.state.pending.item_id];
+      if (item.form_policy.kind === 'required_denominator') {
+        const answer = result.support.answer, d = item.required_denominator;
+        result.support.answer = {n: answer.n * (d / answer.d), d};
+      }
+    }
+    return {...browserPresentation(result.state,pack,view,now), ...(result.support ? {support:result.support} : {})};
   }
 };
 window.addEventListener('DOMContentLoaded', () => {

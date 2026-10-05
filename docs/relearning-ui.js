@@ -95,7 +95,7 @@ function renderAttempt(p,s){
  if(draftItem!==p.item_id){draftItem=p.item_id;drafts={};choice=null;rationalMode='fraction';}const raw=p.item.prompt.split('\n図データ：')[0];const listed=[...raw.matchAll(/\n(\d+)[：:]\s*([^\n]+)/g)].map(m=>({value:Number(m[1]),text:m[2]}));const options=listed.length>=2?listed:[];
  const question=renderVisualTask(p.item,$('visual-task'),p.topic);renderMathText($('question'),friendly(options.length?question.replace(/\n正しいものの番号を入力してください。/g,'').replace(/\n\d+[：:][^\n]*/g,''):question));
  document.querySelector('.problem-scroll').classList.toggle('equation',!options.length&&$('visual-task').hidden&&!question.includes('\n')&&/^[\d\s＋+−×÷=＝\/?.-]+$/.test(question));
- $('choice-answers').hidden=!options.length;$('choice-answers').replaceChildren(...options.map(o=>{const b=button(friendly(o.text),()=>{choice=o.value;$('choice-answers').querySelectorAll('button').forEach(x=>x.classList.toggle('selected',x===b));$('format').textContent='選んだら「答えを確かめる」';});b.dataset.value=o.value;return b;}));
+ $('choice-answers').hidden=!options.length;$('choice-answers').replaceChildren(...options.map(o=>{const b=button(friendly(o.text),()=>{choice=o.value;$('choice-answers').querySelectorAll('button').forEach(x=>{const selected=x===b;x.classList.toggle('selected',selected);x.setAttribute('aria-pressed',String(selected));});$('format').textContent='選んだら「答えを確かめる」';});b.dataset.value=o.value;b.classList.toggle('selected',choice===o.value);b.setAttribute('aria-pressed',String(choice===o.value));return b;}));
  $('answer-fields').hidden=!!options.length;if(options.length){$('answer-fields').replaceChildren();$('format').textContent='答えを選んでください。';}else renderInputs(p.item.response_type==='rational');
  $('reveal').textContent=p.topic.startsWith('tb-')?'答えと図解を見る':'答えと考え方を見る';
  $('steps').replaceChildren(...Array.from({length:s.automatic?6:state.max_questions},(_,i)=>element('span',i<s.count?'✓':String(i+1),i<s.count?'done':i===s.count?'current':'')));
@@ -106,8 +106,9 @@ function renderInputs(rational){
  const stack=rational&&rationalMode==='fraction'?element('div','','fraction-input'):host;
  if(stack!==host){stack.setAttribute('role','group');stack.setAttribute('aria-label','分数の答え。上が分子、下が分母');host.append(stack);}
  for(const [id,text]of fields){const l=element('label',''),i=document.createElement('input');l.append(element('span',text,stack!==host?'fraction-field-label':''));i.id=id;i.type='text';i.inputMode='decimal';i.autocomplete='off';i.required=true;i.value=drafts[id]||'';i.oninput=()=>drafts[id]=i.value;l.append(i);stack.append(l);}
- if(rational)host.append(button(rationalMode==='fraction'?'小数・整数で入れる':'分数で入れる',()=>{for(const i of host.querySelectorAll('input'))drafts[i.id]=i.value;rationalMode=rationalMode==='fraction'?'decimal':'fraction';renderInputs(true);},'input-switch'));
- $('format').textContent=rational?(rationalMode==='fraction'?'分数で答えよう。':'小数・整数で答えよう。'):'答えを入力してください。';
+ const policy=state.pending?.item.form_policy;
+ if(rational&&(!policy||policy.kind==='value_only'))host.append(button(rationalMode==='fraction'?'小数・整数で入れる':'分数で入れる',()=>{for(const i of host.querySelectorAll('input'))drafts[i.id]=i.value;rationalMode=rationalMode==='fraction'?'decimal':'fraction';renderInputs(true);},'input-switch'));
+ $('format').textContent=policy?.kind==='required_denominator'?`分母を${state.pending.item.required_denominator}にして、分子と分母を入力してください。`:policy?.kind==='reduced_fraction'?'これ以上約分できない分数で、分子と分母を入力してください。':rational?(rationalMode==='fraction'?'分数で答えよう。':'小数・整数で答えよう。'):'答えを入力してください。';
  // Keep mobile keyboards closed until the learner taps the answer field.
  if(matchMedia('(min-width:701px)').matches)requestAnimationFrame(()=>host.querySelector('input')?.focus());
 }
