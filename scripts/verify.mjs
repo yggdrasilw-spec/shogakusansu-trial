@@ -17,6 +17,9 @@ const browser = JSON.parse(fs.readFileSync(path.join(root,'verification.json')))
 assert.equal(browser.topics.length,281);assert.equal(new Set(browser.topics.map(t=>t.topic)).size,281);
 assert.ok(browser.topics.every(t=>t.question&&t.support&&t.correct&&t.result&&t.supported&&t.fits));
 assert.equal(browser.errors.length,0);assert.equal(browser.external_requests.length,0);
+const understanding=JSON.parse(fs.readFileSync(path.join(root,'understanding-verification.json')));
+assert.equal(understanding.status,'pass');assert.ok(understanding.checks.length>=47);assert.equal(understanding.errors.length,0);
+assert.ok(browser.checks.filter(c=>c.startsWith('written reasoning connects ')).length===281);
 const python = process.env.QA_PYTHON || (process.platform === 'win32' ? 'python' : 'python3');
 const result = spawnSync(python,['scripts/verify_curriculum_trial.py','--root','docs','--spec','scripts/numeric-spec.json'],{cwd:root,encoding:'utf8'});
 if(result.error)throw result.error;
