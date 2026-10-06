@@ -1,7 +1,7 @@
 {
   "status": "pass",
   "target": "local candidate",
-  "artifact_sha256": "219a75d19820bc4aeda771339f75b8d7454b0cc8c710450b96e24cafa9e7ba70",
+  "artifact_sha256": "7d51c7398f86319c16f887c3ccc960b7e6be804677256c8deab5e909c227b119",
   "checks": [
     "all 281 contents selectable",
     "search catalog connects all contents",

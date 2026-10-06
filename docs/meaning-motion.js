@@ -15,7 +15,7 @@
    const startD=reduce?d*k:d, startN=reduce?n*k:n, divisor=reduce?gcd(startN,startD):1;
    const endD=reduce?startD/divisor:unit?d:d*k, endN=reduce?startN/divisor:unit?n:n*k;
    const band={id:'band',x:40,y:100,w:540,h:90,fill:unit?0:startN/startD,denominator:startD};
-   const units=unit?Array.from({length:n},(_,i)=>({id:'unit-'+i,unit:true,x:40+i*540/d,y:230,w:540/d,h:50,color:'#167b60'})):[];
+   const units=unit?Array.from({length:n},(_,i)=>({id:'unit-'+i,unit:true,x:40+i*540/d,y:210,w:540/d,h:90,color:'#167b60'})):[];
    add(unit?`1/${d}の帯を${n}こ集めます。上の「1」と比べます。`:`同じ大きさの「1」を、${startD}等分しています。`,[band,...units]);
    prediction=unit?'集めた量は、1の何分のいくつ？（例：2/5）':reduce?'区切りをまとめても、色のついた量は変わるでしょうか？':'区切りを細かくしても、色のついた量は変わるでしょうか？';expected=unit?`${n}/${d}`:'変わらない';
    if(unit){units.forEach(o=>{o.y=100;});add(`1/${d}の帯を、「1」の区切りに合わせて動かします。`,[band,...units],{operation:'collect'});}
@@ -64,6 +64,7 @@
    status.textContent=!response?'先に予想を書いてみよう。':matches?'図とつながっています。動かして確かめよう。':'図を動かし、空いた場所や残った量を確かめよう。';};
   let index=0;const nodes=new Map();
   const make=(tag,attrs,parent=svg)=>{const e=document.createElementNS(ns,tag);for(const[k,v]of Object.entries(attrs))e.setAttribute(k,v);parent.append(e);return e;};
+  if(lesson.topic.startsWith('c-')){const whole=make('text',{x:310,y:65,'text-anchor':'middle','font-size':22,fill:'#183334'});whole.textContent='全体の 1';}
   if(lesson.frames[0].ten){for(let i=0;i<20;i++){const[x,y]=slot(i);make('rect',{x:x-19,y:y-19,width:38,height:38,rx:4,fill:'none',stroke:'#a2bbb1'});}const label=make('text',{x:420,y:290,'text-anchor':'middle','font-size':18,fill:'#183334'});label.textContent=lesson.topic.startsWith('as-sub-')?'取った玉':'右の玉';}
   const button=(text,fn)=>{const b=document.createElement('button');b.type='button';b.className='secondary';b.textContent=text;b.onclick=fn;controls.append(b);return b;};
   const prev=button('ひとつ戻る',()=>{index=Math.max(0,index-1);show(false);}), replay=button('この動きをもう一度',()=>{if(index>0){const target=index;index--;show(false);index=target;show(true);}else show(false);}), next=button(lesson.hint?'次のヒント':'次の動きを見る',()=>{index=Math.min(index+1,lesson.frames.length-1);show(true);});
