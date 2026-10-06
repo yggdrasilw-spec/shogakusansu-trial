@@ -34,6 +34,7 @@
       launch.dataset.trialTopic = t.id;
       const related = button('前後のつながり', () => openNode(t.id), 'quiet');
       card.append(meta, title, note, launch, related); host.append(card);
+      if(window.meaningMotion?.topics.includes(t.id))title.append(element('small',' · 動かしてわかる','format'));
     }
     if (!rows.length) host.append(element('p', '見つかりませんでした。別のことばや学年で探してみよう。'));
     document.getElementById('trial-prev').disabled = page === 0;

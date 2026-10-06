@@ -1,7 +1,7 @@
 /* Original SVG diagrams. All question data comes from the public prompt.
  * Storyboards are delivered only after the server records answer support. */
 let textbookPlayback = null;
-function stopTextbookPlayback(){if(textbookPlayback!==null)clearInterval(textbookPlayback);textbookPlayback=null}
+function stopTextbookPlayback(){window.stopMeaningMotion?.();if(textbookPlayback!==null)clearInterval(textbookPlayback);textbookPlayback=null}
 function describeTextbookScene(s){
  const a=s.a??4,b=s.b??3,phase=s.phase===1;
  if(s.kind==='fraction'){let n=s.numerator,d=s.denominator;if(phase&&s.subdivide){n*=s.subdivide;d*=s.subdivide}if(phase&&s.copies)n*=s.copies;return `同じ全体の1を${d}等分した区画。色の区画は${n}個。`+(s.second_numerator||s.second_denominator?` 比べるもう一つの量は${s.second_numerator||s.numerator}/${s.second_denominator||s.denominator}。`:'')}
@@ -197,14 +197,7 @@ function drawTextbookScene(scene, host, topic){
  else text(320,160,'図の条件を確認します',22);
  svg.classList.add('textbook-scene');host.append(svg);
  const readable=document.createElement('p');readable.className='diagram-description';readable.textContent=description;host.append(readable);
- if(phase&&!(window.mathMotionReduced?.() ?? matchMedia('(prefers-reduced-motion: reduce)').matches)){
-  [...svg.querySelectorAll('circle,rect,line,polygon,path')].forEach((node,i)=>{
-   if(node.tagName==='line'&&!node.getAttribute('stroke-dasharray')){
-    const length=Math.hypot(Number(node.getAttribute('x2'))-Number(node.getAttribute('x1')),Number(node.getAttribute('y2'))-Number(node.getAttribute('y1')));
-    node.animate([{strokeDasharray:String(length),strokeDashoffset:String(length)},{strokeDasharray:String(length),strokeDashoffset:'0'}],{duration:650,delay:Math.min(i,14)*35,easing:'ease-out'});
-   }else node.animate([{opacity:0},{opacity:1}],{duration:450,delay:Math.min(i,14)*35,easing:'ease-out'});
-  });
- }
+
 }
 function renderTextbookTask(item,host){
  const marker='\n図データ：',index=item.prompt.indexOf(marker);

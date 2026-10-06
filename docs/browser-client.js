@@ -34,6 +34,10 @@ window.learningTransport = {
     const result = await loader.run(input,transition,action,data,now,options);
     // Commit support before exposing it; commit answers before showing feedback.
     await store.write(result.state,input.revision);
+    if (result.support && window.meaningMotion) {
+      const item = result.state.items[data.completed ? result.state.feedback.item_id : result.state.pending.item_id];
+      result.support.motion = window.meaningMotion.build(item,data.kind);
+    }
     if (result.support?.answer && typeof result.support.answer === 'object') {
       const item = result.state.items[data.completed ? result.state.feedback.item_id : result.state.pending.item_id];
       if (item.form_policy.kind === 'required_denominator') {

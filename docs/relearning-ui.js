@@ -37,7 +37,18 @@ function navigate(next){if(state?.pending)return;screen=next;$('feedback').hidde
 async function act(action,data={}){
  if(busy)return;busy=true;const locked=[...document.querySelectorAll('button')].map(b=>[b,b.disabled]);locked.forEach(([b])=>b.disabled=true);$('error').hidden=true;
  try{const result=await learningTransport.action(action,{...data,revision:state.revision});state=result;if(action==='start'||action==='recommended'){draftItem=null;drafts={};}
-  if(action==='support'){const s=result.support, item=data.completed?result.feedback.item:result.pending.item;$('support-title').textContent=data.completed?'前の問題の答えと考え方':s.answer===null?'ヒント':'答えと考え方';renderMathText($('support'),friendly(visualObjectText(s.guidance,data.completed?result.feedback.topic:result.pending.topic))+(s.answer!==null?'\n答え：'+answerLabel(s.answer,item):'')+(!s.storyboard&&s.worked_steps?.length?'\n\n'+s.worked_steps.map(friendly).join('\n'):''));$('support').hidden=false;const lesson=s.storyboard?structuredClone(s.storyboard):null;if(lesson)lesson.frames.forEach(f=>f.caption=friendly(f.caption));renderTextbookLesson(lesson,$('textbook-lesson'));openDialog('support-dialog');}
+  if(action==='support'){
+   const s=result.support, item=data.completed?result.feedback.item:result.pending.item;
+   $('support-title').textContent=data.completed?'前の問題の答えと考え方':s.answer===null?'ヒント':'答えと考え方';
+   if(s.motion){
+    $('support').hidden=true;window.meaningMotion.render(s.motion,$('textbook-lesson'));
+   }else{
+    renderMathText($('support'),friendly(visualObjectText(s.guidance,data.completed?result.feedback.topic:result.pending.topic))+(s.answer!==null?'\n答え：'+answerLabel(s.answer,item):'')+(!s.storyboard&&s.worked_steps?.length?'\n\n'+s.worked_steps.map(friendly).join('\n'):''));
+    $('support').hidden=false;const lesson=s.storyboard?structuredClone(s.storyboard):null;
+    if(lesson)lesson.frames.forEach(f=>f.caption=friendly(f.caption));renderTextbookLesson(lesson,$('textbook-lesson'));
+   }
+   openDialog('support-dialog');
+  }
   else{closeSupport();$('node-dialog').close();render();window.scrollTo(0,0);}
  }catch(e){const messages={v2_event_budget_exceeded:'回答記録が10,000件に達しました。記録は残っています。メニューの「学習記録の書き出し・復元」から保存できます。',browser_pack_unavailable:'教材を読み込めませんでした。通信を確認して、もう一度試してください。学習記録は変えていません。',browser_pack_invalid:'教材データを確認できませんでした。ページを開き直してください。学習記録は変えていません。',relearning_revision_stale:'別のタブで記録が変わりました。読み直したので、今の問題を確認してください。',relearning_attempt_pending:'今の問題を終えてから、えらぼう。',relearning_no_recommendation:'この学年のおさらいは、また今度。ほかの学年もえらべるよ。',browser_storage_full:'保存場所がいっぱいです。回答はまだ保存されていません。空きを作ってもう一度試してください。',browser_record_corrupt:'保存記録を読み取れません。記録は残っています。「このアプリについて」から書き出せます。',browser_version_stale:'以前の版の記録が残っています。自動では消しません。「このアプリについて」から書き出せます。'};$('error').textContent=messages[e.message]||'うまく保存できなかったよ。もう一度ためしてね。';$('error').hidden=false;if(e.message==='relearning_revision_stale'){draftItem=null;drafts={};state=await learningTransport.state();render();}}
  finally{busy=false;locked.forEach(([b,disabled])=>{if(b.isConnected)b.disabled=disabled;});if(state){for(const id of ['go-home','go-map','go-review'])$(id).disabled=!!state.pending||!!state.feedback?.item&&state.session?.stop!=='paused';if(!state.pending)updateRecommendation();}}
