@@ -21,7 +21,7 @@ const understanding=JSON.parse(fs.readFileSync(path.join(root,'understanding-ver
 assert.equal(understanding.status,'pass');assert.ok(understanding.checks.length>=47);assert.equal(understanding.errors.length,0);
 assert.ok(browser.checks.filter(c=>c.startsWith('written reasoning connects ')).length===281);
 const motion=JSON.parse(fs.readFileSync(path.join(root,'motion-verification.json')));
-assert.equal(motion.rows,871);assert.equal(motion.topics.length,10);assert.ok(motion.checks.length>=109);assert.equal(motion.errors.length,0);
+assert.equal(motion.rows,1411);assert.equal(motion.topics.length,14);assert.ok(motion.checks.length>=155);assert.equal(motion.errors.length,0);
 const python = process.env.QA_PYTHON || (process.platform === 'win32' ? 'python' : 'python3');
 const result = spawnSync(python,['scripts/verify_curriculum_trial.py','--root','docs','--spec','scripts/numeric-spec.json'],{cwd:root,encoding:'utf8'});
 if(result.error)throw result.error;

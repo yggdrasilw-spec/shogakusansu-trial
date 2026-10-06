@@ -1,16 +1,37 @@
 /* One short caption and one mathematical operation per learner-controlled step.
    Created only after the existing support transaction has been committed. */
 (() => {
- const topics=['a-basic','a-complement','as-add-transfer','as-sub-basic','as-sub-ten','as-sub-transfer','c-unit','c-equivalent','c-common','c-reduce'];
+ const topics=['a-basic','a-complement','as-add-transfer','as-sub-basic','as-sub-ten','as-sub-transfer','c-unit','c-equivalent','c-common','c-reduce','b-share','b-group','b-basic','b-remainder'];
  const gcd=(a,b)=>b?gcd(b,a%b):a;
  const slot=(i,side=0)=>[46+(i%5)*43+side*290,90+Math.floor(i/5)*43];
  const dot=(i,side,color)=>({id:`${side}-${i}`,x:slot(i,side)[0],y:slot(i,side)[1],color});
  function build(item,kind){
   if(!topics.includes(item.topic))return null;
   const {a,b,n,d,k}=item.parameters, frames=[], fraction=item.topic.startsWith('c-');
-  const add=(caption,objects,extra={})=>frames.push({caption,objects:structuredClone(objects),...extra});
+  const add=(caption,objects,extra={})=>frames.push({caption,objects:structuredClone(objects),...structuredClone(extra)});
   let prediction, expected;
-  if(fraction){
+  if(item.topic.startsWith('b-')){
+   const {q,r=0}=item.parameters,share=item.topic==='b-share',total=d*q+r;
+   const groupBox=g=>({id:'group-'+g,x:220+(g%3)*125,y:55+Math.floor(g/3)*82,w:110,h:74,label:share?`${g+1}人目`:`${g+1}組目`});
+   const position=(g,i)=>{const box=groupBox(g);return[box.x+18+(i%3)*24,box.y+31+Math.floor(i/3)*16];};
+   let objects=Array.from({length:total},(_,i)=>({id:'div-'+i,x:30+(i%9)*16,y:80+Math.floor(i/9)*16,color:'#167b60',radius:6}));
+   let groups=share?Array.from({length:d},(_,i)=>groupBox(i)):[];
+   add(share?`${total}この玉を、${d}人で同じ数ずつ分けます。`:`${total}この玉を、1組${d}こずつにまとめます。`,objects,{division:true,groups,total});
+   prediction=share?'1人分の玉は、何こになるでしょう？':r?'残る玉は、何こになるでしょう？':'同じ個数ずつまとめると、何組できるでしょう？';expected=String(r?r:q);
+   for(let step=0;step<q;step++){
+    if(share){
+     objects=objects.map((o,i)=>i>=step*d&&i<(step+1)*d?{...o,x:position(i%d,step)[0],y:position(i%d,step)[1],group:i%d}:o);
+     add(`1人に1こずつ配ります（${step+1}回目）。`,objects,{operation:'share',division:true,groups,total});
+    }else{
+     groups.push(groupBox(step));objects=objects.map((o,i)=>i>=step*d&&i<(step+1)*d?{...o,x:position(step,i%d)[0],y:position(step,i%d)[1],group:step}:o);
+     add(`${d}この玉を動かして、1組にまとめます。`,objects,{operation:'group',division:true,groups,total});
+    }
+   }
+   if(r){objects=objects.map((o,i)=>i>=d*q?{...o,x:30+(i-d*q)*18,y:275,remainder:true}:o);add('どの組にも入らなかった玉を、残った玉の場所へ集めます。',objects,{operation:'remainder',division:true,groups,total,remainder:true});}
+   add(share?`1人分は${q}こです。どの人も同じ数です。`:r?`あまりは${r}こです。${d}こより少なく、もう1組は作れません。`:`${d}こずつの組が、${q}組できました。`,objects,{answer:true,division:true,groups,total,remainder:!!r});
+   // Hints demonstrate the first rounds; the learner completes the division.
+   if(kind==='hint')frames.splice(Math.min(frames.length,3));
+  }else if(fraction){
    const reduce=item.topic==='c-reduce', unit=item.topic==='c-unit';
    const startD=reduce?d*k:d, startN=reduce?n*k:n, divisor=reduce?gcd(startN,startD):1;
    const endD=reduce?startD/divisor:unit?d:d*k, endN=reduce?startN/divisor:unit?n:n*k;
@@ -64,6 +85,8 @@
    status.textContent=!response?'先に予想を書いてみよう。':matches?'図とつながっています。動かして確かめよう。':'図を動かし、空いた場所や残った量を確かめよう。';};
   let index=0;const nodes=new Map();
   const make=(tag,attrs,parent=svg)=>{const e=document.createElementNS(ns,tag);for(const[k,v]of Object.entries(attrs))e.setAttribute(k,v);parent.append(e);return e;};
+  const groupLayer=make('g',{});
+  if(lesson.frames[0].division){const total=make('text',{x:100,y:45,'text-anchor':'middle','font-size':18,fill:'#183334'});total.textContent=`全部 ${lesson.frames[0].total}こ`;}
   if(lesson.topic.startsWith('c-')){const whole=make('text',{x:310,y:65,'text-anchor':'middle','font-size':22,fill:'#183334'});whole.textContent='全体の 1';}
   if(lesson.frames[0].ten){for(let i=0;i<20;i++){const[x,y]=slot(i);make('rect',{x:x-19,y:y-19,width:38,height:38,rx:4,fill:'none',stroke:'#a2bbb1'});}const label=make('text',{x:420,y:290,'text-anchor':'middle','font-size':18,fill:'#183334'});label.textContent=lesson.topic.startsWith('as-sub-')?'取った玉':'右の玉';}
   const button=(text,fn)=>{const b=document.createElement('button');b.type='button';b.className='secondary';b.textContent=text;b.onclick=fn;controls.append(b);return b;};
@@ -71,6 +94,11 @@
   function show(animate){
    window.stopMeaningMotion();const frame=lesson.frames[index];renderMathText(caption,frame.caption);caption.prepend(document.createTextNode(`${index+1} / ${lesson.frames.length}　`));svg.setAttribute('aria-label',frame.caption);
    const reduced=window.mathMotionReduced?.()??matchMedia('(prefers-reduced-motion: reduce)').matches;
+   groupLayer.replaceChildren();for(const group of frame.groups||[]){
+    make('rect',{x:group.x,y:group.y,width:group.w,height:group.h,rx:8,fill:'#f0f5f2',stroke:'#a2bbb1'},groupLayer);
+    const label=make('text',{x:group.x+group.w/2,y:group.y+17,'text-anchor':'middle','font-size':14,fill:'#183334'},groupLayer);label.textContent=group.label;
+   }
+   if(frame.remainder){const label=make('text',{x:100,y:254,'text-anchor':'middle','font-size':16,fill:'#183334'},groupLayer);label.textContent='残った玉';}
    for(const o of frame.objects){
     let node=nodes.get(o.id);
     if(o.id==='band'){
@@ -90,8 +118,8 @@
     }else{
      const xattr=o.unit?'x':'cx',yattr=o.unit?'y':'cy';
      const old=node?{x:Number(node.getAttribute(xattr)),y:Number(node.getAttribute(yattr))}:o.origin?{x:o.origin[0],y:o.origin[1]}:null;
-     if(!node){node=make(o.unit?'rect':'circle',o.unit?{width:o.w,height:o.h,fill:o.color,'data-object':o.id}:{r:15,fill:o.color,'data-object':o.id});nodes.set(o.id,node);}
-     node.setAttribute(xattr,o.x);node.setAttribute(yattr,o.y);node.setAttribute('data-removed',!!o.removed);node.setAttribute('stroke',o.unit||o.removed?'#183334':'none');node.setAttribute('stroke-dasharray',o.removed?'3 2':'none');
+     if(!node){node=make(o.unit?'rect':'circle',o.unit?{width:o.w,height:o.h,fill:o.color,'data-object':o.id}:{r:o.radius||15,fill:o.color,'data-object':o.id});nodes.set(o.id,node);}
+     node.setAttribute(xattr,o.x);node.setAttribute(yattr,o.y);node.setAttribute('data-removed',!!o.removed);node.setAttribute('stroke',o.remainder?'#b95810':o.unit||o.removed?'#183334':'none');node.setAttribute('stroke-dasharray',o.removed?'3 2':'none');
      if(animate&&!reduced&&old&&(old.x!==o.x||old.y!==o.y))animations.push(node.animate([{transform:`translate(${old.x-o.x}px,${old.y-o.y}px)`},{transform:'translate(0,0)'}],{duration:900,easing:'ease-in-out'}));
     }
    }
